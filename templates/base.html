@@ -30,7 +30,7 @@
   </head>
 
   <body>
-      
+
     <header></header>
 
     {% if messages %}
@@ -50,6 +50,13 @@
             {% endfor %}
         </div>
     {% endif %}
+
+    {% block page_header %}
+    <!-- In case you'd like to add an additional "header" below the navbar -->
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
 
   </body>
 </html>
