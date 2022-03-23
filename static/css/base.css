@@ -1,3 +1,18 @@
+.btn:hover {
+  background: #005477;
+}
+
+.main-menu {
+  position: relative;
+  z-index: 3;
+}
+
+.sub-menu {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
 #sidebar {
   background: #fff;
   height: 100%;
@@ -42,13 +57,13 @@
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
+  color: #005477;
   background: #fff;
 }
 
 #sidebar ul li.active > a,
 #sidebar a[aria-expanded="true"] {
-  color: #007bff;
+  color: #005477;
   background: #e6f2ff;
   border-radius: 6px;
 }
@@ -63,4 +78,20 @@ a[data-toggle="collapse"] {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
+}
+
+ul.social-icons {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+ul.social-icons li {
+  display: inline-block;
+  margin-right: 0px;
+  margin-bottom: 0;
+}
+
+#sidebar ul.social-icons li a {
+  font-size: 27px;
 }

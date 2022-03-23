@@ -34,13 +34,17 @@
 
   <body>
     <header>
-        <div class="container-xl">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#"><strong>DROPPEN</strong></a>
                 <button class="btn btn-link d-block d-md-none" id="sidebarCollapse" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <a class="navbar-brand" href="#"><strong>DROPPEN</strong></a>
+                <ul class="navbar-nav ml-auto d-block d-md-none">
+                    <li class="nav-item">
+                        <a class="btn btn-link" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge badge-danger">3</span></a>
+                    </li>
+                </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
@@ -55,15 +59,12 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Product 1</a>
-                                <a class="dropdown-item" href="#">Product 1</a>
-                                <a class="dropdown-item" href="#">Product 1</a>
+                                <a class="dropdown-item" href="#">Product 2</a>
+                                <a class="dropdown-item" href="#">Product 3</a>
                             </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="btn btn-link" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge badge-danger">3</span></a>
-                        </li>
                         <li class="nav-item ml-md-3">
                             <a class="btn btn-primary" href="#"><i class="fa-solid fa-user-tie"></i> Log In / Register</a>
                         </li>
@@ -91,13 +92,10 @@
 
             <ul class="list-unstyled components links">
                 <li class="active">
-                <a href="#"><i class=""></i> About</a>
+                <a href="#"><i class="fa-solid fa-circle-info mr-2"></i> About</a>
                 </li>
                 <li>
-                <a href="#"><i class=""></i> Contact</a>
-                </li>
-                <li>
-                <a href="#"><i class=""></i> Products</a>
+                <a href="#"><i class="fa-solid fa-glass-water-droplet mr-2"></i> Products</a>
                 </li>
                 <li>
                 <a href="#"><i class=""></i> Something</a>
@@ -118,7 +116,7 @@
                 </ul>
                 </li>
                 <li>
-                <a href="#"><i class="bx bx-phone mr-3"></i> Contact</a>
+                <a href="#"><i class="fa-solid fa-phone mr-2"></i> Contact</a>
                 </li>
             </ul>
 
@@ -139,10 +137,10 @@
             </ul>
 
             <ul class="social-icons">
-                <li><a href="#" target="_blank" title=""><i class=""></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class=""></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class="""></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class=""></i></a></li>
+                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" target="_blank" title=""><i class="fa-solid fa-arrows-spin"></i></a></li>
             </ul>
         </nav>
     </header>
