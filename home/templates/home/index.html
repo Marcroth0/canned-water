@@ -1,9 +1,9 @@
 {% extends "base.html" %} 
 {% load static %} 
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron d-flex align-items-center justify-content-center shadow p-3 mb-5">
   <div class="container">
-    <h1>
+    <h1 class="word-animation">
       <span>Hydrate for: </span>
       <div class="message">
         <div class="word1">CLIMATE</div>
@@ -13,4 +13,39 @@
     </h1>
   </div>
 </div>
+
+<!-- Did you know? -->
+<div class="container-lg d-flex justify-content-center mt-3">
+    <div class="row">
+        <div class="col-md-4 align-items-center text-center justify-content-center">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <h1>Buy</h1>
+            <p>We get our money (Gracias) and you get to treat yourself to some invaluable hydration. (You're welcome)</p>
+        </div>
+        <div class="col-md-4 align-items-center text-center justify-content-center">
+            <i class="fa-solid fa-recycle"></i>
+            <h1>Recycle</h1>
+            <p>With your order we send a box(of non-lethal cardboard) which you can use to send it back to us.</p>
+        </div>
+        <div class="col-md-4 align-items-center text-center justify-content-center">
+            <i class="fa-solid fa-earth-americas"></i>
+            <h1>Saving the planet</h1>
+            <p>Considering how easy it is to recycle our cans, we can easily turn them into more drinks and thus, THUS, saving this tiny little fucking planet of ours.</p>
+        </div>
+    </div>
+</div>
+
+<!-- A fuck you to Plastic -->
+
+<!-- Product cards -->
+
+<!-- <div class="container d-flex justify-content-center mt-100">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="wrapper text-center">
+
+            </div>
+        </div>
+    </div>
+</div> -->
 {% endblock %}

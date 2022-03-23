@@ -105,7 +105,7 @@ ul.social-icons li {
 
 /* Hero word animation */
 
-h1 {
+.word-animation {
   color: #333;
   font-family: tahoma;
   font-size: 3rem;
@@ -118,7 +118,7 @@ h1 {
   width: 680px;
 }
 
-h1 span {
+.word-animation span {
   font-size: 40px;
   margin-left: 40px;
 }
@@ -202,4 +202,10 @@ h1 span {
     width: 0;
     text-indent: 0;
   }
+}
+
+/* Did you know? */
+
+i {
+  font-size: 29px;
 }
