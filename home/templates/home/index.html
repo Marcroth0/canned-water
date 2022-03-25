@@ -1,36 +1,50 @@
 {% extends "base.html" %} 
 {% load static %} 
 {% block content %}
-<div class="jumbotron d-flex align-items-center justify-content-center shadow p-3 mb-5">
+<div class="jumbotron d-flex flex-column align-items-center justify-content-center shadow p-3 mb-5">
   <div class="container">
     <h1 class="word-animation">
-      <span>Hydrate for: </span>
-      <div class="message">
+      <span class="text-white">Hydrate for: </span>
+      <div class="message text-light">
         <div class="word1">CLIMATE</div>
         <div class="word2">PLASTIC-HATE</div>
         <div class="word3"><u>YOU, MATE</u></div>
       </div>
     </h1>
   </div>
+  <a href="" class="mt-auto justify-content-center"><i class="fa-solid fa-circle-down"></i></a>
 </div>
 
 <!-- Did you know? -->
-<div class="container-lg d-flex justify-content-center mt-3">
-    <div class="row">
-        <div class="col-md-4 align-items-center text-center justify-content-center">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col-sm just-fucking-water">
+      <h3 class="display-4">JUST</h3>
+    </div>
+    <div class="col-sm just-fucking-water">
+      <h3 class="display-4">F*CK*NG</h3>
+    </div>
+    <div class="col-sm just-fucking-water">
+      <h3 class="display-4">WATER</h3>
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-center mt-1">
+    <div class="row flex-md-row flex-lg-row flex-sm-column">
+        <div class="col-sm align-items-center text-center justify-content-center border shadow m-1 p-2">
+            <i class="fa-solid fa-hand-holding-dollar mt-2"></i>
             <h1>Buy</h1>
-            <p>We get our money (Gracias) and you get to treat yourself to some invaluable hydration. (You're welcome)</p>
+            <p class="m-1 p-2">We get our money (Gracias) and you get to treat yourself to some invaluable hydration. (You're welcome)</p>
         </div>
-        <div class="col-md-4 align-items-center text-center justify-content-center">
-            <i class="fa-solid fa-recycle"></i>
+        <div class="col-sm align-items-center text-center justify-content-center border shadow m-1 p-2">
+            <i class="fa-solid fa-recycle mt-2"></i>
             <h1>Recycle</h1>
-            <p>With your order we send a box(of non-lethal cardboard) which you can use to send it back to us.</p>
+            <p class="m-1 p-2">With your order we send a box(of non-lethal cardboard) which you can use to send it back to us.</p>
         </div>
-        <div class="col-md-4 align-items-center text-center justify-content-center">
-            <i class="fa-solid fa-earth-americas"></i>
-            <h1>Saving the planet</h1>
-            <p>Considering how easy it is to recycle our cans, we can easily turn them into more drinks and thus, THUS, saving this tiny little fucking planet of ours.</p>
+        <div class="col-sm align-items-center text-center justify-content-center border shadow m-1 p-2">
+            <i class="fa-solid fa-earth-americas mt-2"></i>
+            <h1>Save the Planet</h1>
+            <p class="m-1 p-2">Considering how easy it is to recycle our cans, we can easily turn them into more drinks and thus, THUS, saving this tiny little fucking planet of ours.</p>
         </div>
     </div>
 </div>
@@ -39,13 +53,4 @@
 
 <!-- Product cards -->
 
-<!-- <div class="container d-flex justify-content-center mt-100">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="wrapper text-center">
-
-            </div>
-        </div>
-    </div>
-</div> -->
 {% endblock %}

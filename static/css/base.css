@@ -1,3 +1,17 @@
+body {
+  background:black;
+}
+
+.just-fucking-water {
+  font-family: 'Codystar', cursive;
+  font-size: 27px;
+  color:white;
+}
+
+h1, h2, h3, h4, p, i {
+  color: white;
+}
+
 .jumbotron {
   background: url("/media/hero-image.jpg");
   background-size: cover;
@@ -118,6 +132,14 @@ ul.social-icons li {
   width: 680px;
 }
 
+.card img {
+  background:transparent;
+}
+
+.container .word-animation {
+    margin-top: 200px;
+}
+
 .word-animation span {
   font-size: 40px;
   margin-left: 40px;
@@ -134,6 +156,7 @@ ul.social-icons li {
   left: 270px;
   animation: openclose 5s ease-in-out infinite;
   margin-left: 35px;
+  
 }
 
 @keyframes openclose {
