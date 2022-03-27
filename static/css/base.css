@@ -1,14 +1,19 @@
 body {
-  background:black;
+  background: black;
 }
 
 .just-fucking-water {
-  font-family: 'Codystar', cursive;
+  font-family: "Codystar", cursive;
   font-size: 27px;
-  color:white;
+  color: white;
 }
 
-h1, h2, h3, h4, p, i {
+h1,
+h2,
+h3,
+h4,
+p,
+i {
   color: white;
 }
 
@@ -133,11 +138,11 @@ ul.social-icons li {
 }
 
 .card img {
-  background:transparent;
+  background: transparent;
 }
 
 .container .word-animation {
-    margin-top: 200px;
+  margin-top: 200px;
 }
 
 .word-animation span {
@@ -156,7 +161,6 @@ ul.social-icons li {
   left: 270px;
   animation: openclose 5s ease-in-out infinite;
   margin-left: 35px;
-  
 }
 
 @keyframes openclose {
@@ -231,4 +235,89 @@ ul.social-icons li {
 
 i {
   font-size: 29px;
+}
+
+/* Product cards */
+
+.product-wrapper,
+.product-img {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.mb-45 {
+  margin-bottom: 45px;
+}
+
+.product-action {
+  bottom: 0px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transition: all 0.6s ease 0s;
+}
+
+.product-wrapper {
+  border-radius: 10px;
+}
+
+.product-img > span {
+  background-color: #fff;
+  box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
+  color: #333;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  left: 20px;
+  letter-spacing: 1px;
+  padding: 3px 12px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 20px;
+}
+
+.product-action-style {
+  background-color: #fff;
+  box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
+  display: inline-block;
+  padding: 16px 2px 12px;
+}
+
+.product-action-style > a {
+  color: #979797;
+  line-height: 1;
+  padding: 0 21px;
+  position: relative;
+}
+
+.product-action-style > a.action-plus {
+  font-size: 18px;
+}
+
+.product-wrapper:hover .product-action {
+  bottom: 20px;
+  opacity: 1;
+}
+
+/* Product Modal content */
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Background blur */
+.modal-open .background-blur{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
 }
