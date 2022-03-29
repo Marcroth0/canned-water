@@ -1,0 +1,128 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340155",
+      "name": "Mango",
+      "description": "Something about Mango",
+      "price": 53.99,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "/media/mango.png",
+      "image": "mango.png"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001600425",
+      "name": "Lemon Lemonsson",
+      "description": "Something about Lemon",
+      "price": 58.99,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "/media/lemon-img.png",
+      "image": "lemon-img.png"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001730010",
+      "name": "Passion Fruit",
+      "description": "Something about passion fruit",
+      "price": 205.99,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "/media/passion-img.png",
+      "image": "passion-img.png"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001890157",
+      "name": "The Ol' Regular",
+      "description": "Something about the ol' regular",
+      "price": 169.99,
+      "category": 1,
+      "rating": 3.0,
+      "image_url": "/media/ol-regular-img.png",
+      "image": "ol-regular-img.png"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002111605",
+      "name": "Hydrate For Climate Tote bag",
+      "description": "Something about the tote bag",
+      "price": 232.99,
+      "category": 2,
+      "rating": 5.0,
+      "image_url": "/media/mockup-of-a-tote-bag-featuring-a-tattoed-person-m24031.png",
+      "image": "mockup-of-a-tote-bag-featuring-a-tattoed-person-m24031.png"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002260206",
+      "name": "The Dropp signature Tote bag",
+      "description": "Signature tote bag",
+      "price": 30.99,
+      "category": 2,
+      "rating": 4.7,
+      "image_url": "/media/mockup-of-a-tote-bag-featuring-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24029.png",
+      "image": "mockup-of-a-tote-bag-featuring-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24029.png"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002440521",
+      "name": "Reppin' the Dropp while you shop",
+      "description": "Tote bag",
+      "price": 59.0,
+      "category": 2,
+      "rating": 4.4,
+      "image_url": "/media/mockup-of-a-tote-bag-featuring-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24029(1).png",
+      "image": "mockup-of-a-tote-bag-featuring-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24029(1).png"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002601115",
+      "name": "Hydrate for You, Mate, tote bag",
+      "description": "Tote bag",
+      "price": 36.99,
+      "category": 2,
+      "rating": 4.5,
+      "image_url": "/media/mockup-of-a-happy-person-with-arm-tattoos-carrying-a-tote-bag-m24030.png",
+      "image": "mockup-of-a-happy-person-with-arm-tattoos-carrying-a-tote-bag-m24030.png"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002690715",
+      "name": "Swaglords hydration hat",
+      "description": "Good for fishing in lakes as well as in bars",
+      "price": 169.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "/media/bucket-hat-mockup-of-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24005.png",
+      "image": "bucket-hat-mockup-of-a-happy-person-with-tattoos-and-a-heart-shaped-necklace-m24005.png"
+    }
+  }
+]
