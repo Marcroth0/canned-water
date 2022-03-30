@@ -11,31 +11,44 @@
 {% block content %}
 <div class="row mt-100 border-right-2 border-left-2 shadow mb-1">
     <div class="col-3 text-center align-middle shadow">
-        <h2 class="m-2">All products</h2>
+        <a href="{% url 'products' %}">All products</a>
     </div>
     <div class="col-3 text-center align-middle shadow">
-        <h2 class="m-2">Water</h2>
+        <a href="{% url 'products' %}?category=product_water">Water</a>
     </div>
     <div class="col-3 text-center align-middle shadow">
-        <h2 class="m-2">Bags</h2>
+        <a href="{% url 'products' %}?category=product_bags">Bags</a>
     </div>
     <div class="col-3 text-center align-middle shadow">
-        <h2 class="m-2">Hats</h2>
+        <a href="{% url 'products' %}?category=product_hats">Hats</a>
     </div>
 </div>
-<div class="container d-flex justify-content-center mt-100 background-blur">
+<div class="container-fluid">
     <div class="row">
-        {% for product in products %}
-            <div class="col-md-3 col-sm-4">
-                <div class="product-wrapper mb-45 text-center">
-                    <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
-                        <div class="product-action">
-                            <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Products</h2>
+            {% for c in current_categories %}
+                <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                </a>
+            {% endfor %}
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center mt-100 background-blur">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3 col-sm-4">
+                    <div class="product-wrapper mb-45 text-center">
+                        <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
+                            <div class="product-action">
+                                <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
+</div>
 </div>
 {% endblock %}
