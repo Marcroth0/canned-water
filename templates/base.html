@@ -39,7 +39,7 @@
   <body>
     <header>
         <div class="container-fluid fixed-top">
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark" id="barnav">
                 <button class="btn btn-link d-block d-md-none" id="sidebarCollapse" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -84,9 +84,9 @@
                         <li class="nav-item ml-md-3">
                             <a class="btn btn-link" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge badge-danger">3</span></a>
                             {% if request.user.is_authenticated %}
-                                <a class="btn btn-primary" href="#"><i class="fa-solid fa-user-tie"></i> My Account</a>
+                                <a class="btn" href="#"><i class="fa-solid fa-user-tie"></i> My Account</a>
                             {% else %}
-                                <a class="btn btn-primary" href="{% url 'account_login' %}"><i class="fa-solid fa-user-tie"></i> Log In / Register</a>
+                                <a class="btn-group-sm" href="{% url 'account_login' %}"><i class="fa-solid fa-user-tie"></i> Log In / Register</a>
                             {% endif %}
                         </li>
                     </ul>
@@ -99,7 +99,7 @@
                 <div class="container">
                 <div class="row align-items-center">
                     <div class="col-10 pl-0">
-                    <a class="btn btn-primary" href="#"><i class="fa-solid fa-user-tie"></i></i> Log In</a>
+                    <a class="btn" href="#"><i class="fa-solid fa-user-tie"></i></i> Log In</a>
                     </div>
 
                     <div class="col-2 text-left">
@@ -112,7 +112,7 @@
             </div>
 
             <ul class="list-unstyled components links">
-                <li class="active">
+                <li>
                 <a href="#"><i class="fa-solid fa-circle-info mr-2"></i> About</a>
                 </li>
                 <li>
@@ -144,16 +144,16 @@
             <h6 class="text-uppercase mb-1">Categories</h6>
             <ul class="list-unstyled components mb-3">
                 <li>
-                <a href="#">Category 1</a>
+                <a href="{% url 'products' %}?category=product_water">Water</a>
                 </li>
                 <li>
-                <a href="#">Category 1</a>
+                <a href="{% url 'products' %}?category=product_bags">Tote Bags</a>
                 </li>
                 <li>
-                <a href="#">Category 1</a>
+                <a href="{% url 'products' %}?category=product_hats">Hat(s)</a>
                 </li>
                 <li>
-                <a href="#">Category 1</a>
+                <a href="#">Articles</a>
                 </li>
             </ul>
             <form method="GET" action="{% url 'products' %}">

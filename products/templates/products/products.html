@@ -9,7 +9,7 @@
     </div> -->
 {% endblock %}
 {% block content %}
-<div class="row mt-100 border-right-2 border-left-2 shadow mb-1">
+<div class="row mt-100 products-bar justify-content-center shadow mb-1">
     <div class="col-3 text-center align-middle shadow">
         <a href="{% url 'products' %}">All products</a>
     </div>
@@ -51,4 +51,21 @@
         </div>
 </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(window).scroll(function() {
+        var productsBar = $('#barnav').offset().top;
+        if(productsBar >= 100){
+            $(".products-bar").addClass('fade-in')
+            $(".products-bar").addClass('products-sidebar')
+        }else{
+            $(".products-bar").removeClass('fade-in')
+            $(".products-bar").removeClass('products-sidebar')
+        }
+        });
+    });
+</script>
 {% endblock %}
