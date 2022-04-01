@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-light" id="exampleModalLongTitle"><i class="fa-solid fa-eye text-light"></i></h5>
+        <button type="button text-light" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="text-light">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+        <div class="row">
+          {% for product in products %}
+          <div class="col-md-6 product-img">
+            <img src="{{ product.image.url }}" alt="">
+          </div>
+          <div class="col-md-6">
+            <h1 class="text-light">{{ product.name }}</h1>
+            <hr>
+            <p class="text-light">{{ product.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row justify-content-end align-items-center d-flex">
+          <div class="col-sm quantity justify-content-center text-center">
+                <span class="minus bg-light">-</span>
+                <input type="number" class="count" name="quantity" value="1">
+                <span class="plus bg-light">+</span>
+          </div>
+          <button type="button" class="col-sm btn"><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

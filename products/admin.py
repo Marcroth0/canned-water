@@ -8,8 +8,10 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'price',
         'rating',
-        'image'
+        'image',
+        'featured_product',
     )
+    list_editable = ('featured_product',)
 
     ordering = ('sku',)
 class CategoryAdmin(admin.ModelAdmin):

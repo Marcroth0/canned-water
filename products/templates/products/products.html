@@ -42,15 +42,18 @@
                     <div class="product-wrapper mb-45 text-center">
                         <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
                             <div class="product-action">
-                                <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                                <div class="product-action-style"> <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#exampleModal" data-url="{% url 'product_detail' product.id %}" href="#"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
                             </div>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
+    </div>
 </div>
-</div>
+<div id="modal-wrapper"></div>
+
+
 {% endblock %}
 
 {% block postloadjs %}
@@ -74,6 +77,20 @@
     //         $(this).addClass("product-orange");
     //     }
     // });
+
+    $(document).ready(function() {
+        $(".open-modal-wrapper").on("click", function() {
+            var shareNoteModalDiv = $("#modal-wrapper");
+                $.ajax({
+                    url: $(this).attr("data-url"),
+                    type: 'GET',
+                    success: function(data) {
+                        shareNoteModalDiv.html(data);
+                        $("#modal-wrapper").modal('show');
+                }
+            });
+        });
+    });
 </script>
 {% endblock %}
 

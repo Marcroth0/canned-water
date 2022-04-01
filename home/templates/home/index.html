@@ -70,42 +70,17 @@
 <!-- Product cards -->
 <div class="container d-flex justify-content-center mt-75 background-blur">
     <div class="row">
-        <div class="col-md-3">
-            <div class="product-wrapper mb-45 text-center">
-                <div class="product-img"> <a href="#" data-abc="true"> <img src="/media/lemon-img.png" alt=""> </a>
-                    <div class="product-action">
-                        <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product-wrapper mb-45 text-center">
-                <div class="product-img"> <a href="#" data-abc="true"> <img src="/media/mango.png" alt=""> </a> 
-                    <div class="product-action">
-                        <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product-wrapper mb-45 text-center">
-                <div class="product-img"> <img src="/media/ol-regular-img.png" alt=""> </a> 
-                    <div class="product-action">
-                        <div class="product-action-style"> <a class="action-plus" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      {% for product in featured %}
           <div class="col-md-3">
             <div class="product-wrapper mb-45 text-center">
-                <div class="product-img"> <a href="#" data-abc="true"> <img src="/media/passion-img.png" alt=""> </a> 
+                <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
                         <div class="product-action-style"> <button class="action-plus btn" type="button" title="Quick View" data-toggle="modal" data-target="#exampleModalCenter" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </button> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
                     </div>
                 </div>
             </div>
         </div>
+      {% endfor %}
     </div>
 </div>
 
@@ -121,14 +96,16 @@
       </div>
       <div class="modal-body d-flex justify-content-center">
         <div class="row">
+          {% for product in featured %}
           <div class="col-md-6 product-img">
-            <img src="/media/ol-regular-img.png" alt="">
+            <img src="{{ product.image.url }}" alt="">
           </div>
           <div class="col-md-6">
-            <h1 class="text-light">Lemon Lemonsson</h1>
+            <h1 class="text-light">{{ product.name }}</h1>
             <hr>
-            <p class="text-light">Description</p>
+            <p class="text-light">{{ product.description }}</p>
           </div>
+          {% endfor %}
         </div>
       </div>
       <div class="modal-footer">
