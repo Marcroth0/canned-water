@@ -1,7 +1,22 @@
 {% extends "base.html" %} 
 {% load static %} 
 {% block content %}
-
-
+<div class="container mb-2 mt-100 d-flex justify-content-center border">
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+                <div class="table-responsive rounded"></div>
+            {% else %}
+                <p class="lead mb-5">Your bag is empty.</p>
+                <a href="{% url 'products' %}" class="btn">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping!</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
