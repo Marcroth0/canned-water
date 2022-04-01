@@ -1,5 +1,6 @@
 body {
-  background: rgba(32, 33, 36, 1);
+  /* background: rgba(32, 33, 36, 1); */
+  background:#000;
 }
 
 .container-fluid {
