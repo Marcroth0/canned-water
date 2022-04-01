@@ -113,7 +113,7 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header row">
+      <div class="modal-header">
         <h5 class="modal-title text-light" id="exampleModalLongTitle"><i class="fa-solid fa-eye text-light"></i></h5>
         <button type="button text-light" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" class="text-light">&times;</span>
@@ -121,8 +121,8 @@
       </div>
       <div class="modal-body d-flex justify-content-center">
         <div class="row">
-          <div class="col-md-6">
-            <img src="https://cdn.natmat.se/content/shopimages/large/44378-5000112581423.jpg" alt="">
+          <div class="col-md-6 product-img">
+            <img src="/media/ol-regular-img.png" alt="">
           </div>
           <div class="col-md-6">
             <h1 class="text-light">Lemon Lemonsson</h1>
@@ -132,8 +132,14 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="row justify-content-end align-items-center d-flex">
+          <div class="col-sm quantity justify-content-center text-center">
+                <span class="minus bg-light">-</span>
+                <input type="number" class="count" name="quantity" value="1">
+                <span class="plus bg-light">+</span>
+          </div>
+          <button type="button" class="col-sm btn"><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+        </div>
       </div>
     </div>
   </div>

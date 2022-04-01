@@ -9,18 +9,18 @@
     </div> -->
 {% endblock %}
 {% block content %}
-<div class="row mt-100 products-bar justify-content-center shadow mb-1">
-    <div class="col-3 text-center align-middle shadow">
-        <a href="{% url 'products' %}">All products</a>
+<div class="row mt-100 products-bar justify-content-center align-items-center shadow mb-3">
+    <div class="col-3 text-center color-toggle shadow">
+        <a href="{% url 'products' %}" class="text-light">All products</a>
     </div>
-    <div class="col-3 text-center align-middle shadow">
-        <a href="{% url 'products' %}?category=product_water">Water</a>
+    <div class="col-3 text-center color-toggle shadow">
+        <a href="{% url 'products' %}?category=product_water" class="text-light">Water</a>
     </div>
-    <div class="col-3 text-center align-middle shadow">
-        <a href="{% url 'products' %}?category=product_bags">Bags</a>
+    <div class="col-3 text-center color-toggle shadow">
+        <a href="{% url 'products' %}?category=product_bags" class="text-light">Bags</a>
     </div>
-    <div class="col-3 text-center align-middle shadow">
-        <a href="{% url 'products' %}?category=product_hats">Hats</a>
+    <div class="col-3 text-center color-toggle shadow">
+        <a href="{% url 'products' %}?category=product_hats" class="text-light">Hats</a>
     </div>
 </div>
 <div class="container-fluid">
@@ -67,5 +67,13 @@
         }
         });
     });
+    
+    // $(".color-toggle").click(function () {
+    //     if(!$(this).hasClass('product-orange')) {
+    //         $(".color-toggle").removeClass("product-orange");
+    //         $(this).addClass("product-orange");
+    //     }
+    // });
 </script>
 {% endblock %}
+

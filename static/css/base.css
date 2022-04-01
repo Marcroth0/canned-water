@@ -11,29 +11,33 @@ body {
   background-color: #e1640d;
 }
 
+.product-orange {
+  background-color: #e1640d;
+}
+
 .products-sidebar {
-  display:flex;
-  align-content:center;
-  flex-direction:column;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
 }
 
 .fade-in {
-    position:fixed;
-    z-index: 1;
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 0.5s;
+  position: fixed;
+  z-index: 1;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 @keyframes fadeInOpacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .just-fucking-water {
@@ -362,6 +366,47 @@ i {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.quantity .minus {
+  background-color: #fff;
+  color: black;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+}
+
+.quantity .plus {
+  background-color: #fff;
+  color: black;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+}
+
+.quantity .count {
+  color: #fff;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 0 2px;
+  min-width: 35px;
+  text-align: center;
+}
+
+.quantity > span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input {
+  border: 0;
+  width: 2%;
+}
+
 /* Background blur */
 .modal-open .background-blur {
   -webkit-filter: blur(4px);
@@ -372,4 +417,13 @@ i {
 
 .mt-100 {
   margin-top: 100px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-device-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; */
+  .modal-footer .row button {
+    margin-top: 10px;
+  }
 }
