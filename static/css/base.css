@@ -1,6 +1,6 @@
 body {
   /* background: rgba(32, 33, 36, 1); */
-  background: #000;
+  background: linear-gradient(110deg, #000000 60%, #e1640d 60%);
 }
 
 .container-fluid {
@@ -10,6 +10,7 @@ body {
 
 .btn {
   background-color: #e1640d;
+  
 }
 
 .product-orange {
@@ -433,9 +434,11 @@ input {
   }
 }
 
-.test {
-  color: white;
-  margin-top: 100px;
-  height: 100%;
-  width: 100%;
+/* Bag */
+
+td img {
+  max-height: 90px;
+  max-width: 90px;
 }
+
+
