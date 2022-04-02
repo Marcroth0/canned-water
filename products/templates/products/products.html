@@ -88,8 +88,7 @@
                 type: 'GET',
                 success: function(data) {
                     document.getElementById('modal-wrapper').innerHTML = data;
-                    //shareNoteModalDiv.html(data);
-                    //console.log(shareNoteModalDiv.html)
+                    $(".modal").addClass("modal-display")
                     $("#modal-wrapper").modal('show');
                 }
             });
