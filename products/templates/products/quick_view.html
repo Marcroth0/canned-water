@@ -25,19 +25,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <div class="row justify-content-end align-items-center d-flex">
-          <form class="form col-sm" action="{% url 'add_to_bag' product.id %}" method="POST">
-            {% csrf_token %}
-            <div class="input-group">
-              <div class="col-sm quantity justify-content-center text-center m-2">
-                    <button class="minus bg-light decrement-qty" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">-</button>
-                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                    <button class="increment-qty plus bg-light" data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">+</button>
-              </div>
-            </div>
-            <button type="submit" value="Add to Bag" class="col-sm btn"><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
-          </form>
-        </div>
+
+
       </div>
     </div>
   </div>

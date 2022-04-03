@@ -56,3 +56,16 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+def quick_view(request, product_id):
+    """ A quick view of products """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/quick_view.html', context)
+
+
