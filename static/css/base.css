@@ -419,6 +419,29 @@ input {
   margin-top: 100px;
 }
 
+/* Toasts */
+
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 9999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
+
+.custom-toast,
+.toast-header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
 /* Media Queries */
 
 @media only screen and (max-device-width: 480px) {
