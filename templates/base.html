@@ -18,6 +18,7 @@
     {% endblock %}
 
     {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/extra.css' %}">
     {% endblock %}
 
     <style>
@@ -38,7 +39,7 @@
 
   <body>
     <header>
-        <div class="container-fluid fixed-top">
+        <div class="container-fluid fixed-top navbar-opacity">
             <nav class="navbar navbar-expand-lg navbar-dark" id="barnav">
                 <button class="btn btn-link d-block d-md-none" id="sidebarCollapse" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

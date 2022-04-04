@@ -67,5 +67,3 @@ def quick_view(request, product_id):
     }
 
     return render(request, 'products/quick_view.html', context)
-
-
