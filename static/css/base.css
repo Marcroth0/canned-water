@@ -1,5 +1,4 @@
 body {
-  /* background: rgba(32, 33, 36, 1); */
   background: linear-gradient(110deg, #000000 60%, #e1640d 60%);
 }
 
@@ -478,7 +477,7 @@ td img {
 }
 
 .load-spinner {
-  position:fixed;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,7 +491,7 @@ td img {
 }
 
 .load-spinner2 {
-  position:fixed;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
