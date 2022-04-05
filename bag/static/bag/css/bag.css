@@ -8,14 +8,14 @@
   z-index: -1;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
 }
-
 
 h2,
 h3,
 h4,
 p,
-th {
+th,
+.count {
   color: #000 !important;
 }
