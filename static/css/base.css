@@ -24,7 +24,7 @@ body {
 
 .fade-in {
   position: fixed;
-  z-index: 1;
+  /* z-index: 1; */
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
@@ -475,4 +475,32 @@ td img {
 
 .breadcrumb {
   background: transparent !important;
+}
+
+.load-spinner {
+  position:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.85) url("/media/loading-spinner.gif");
+  background-size: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99999999999999;
+}
+
+.load-spinner2 {
+  position:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: url("/media/loading-spinner.gif");
+  background-size: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99999999999999;
 }
