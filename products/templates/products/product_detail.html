@@ -1,22 +1,7 @@
 {% extends 'base.html' %}
 {% load static %} 
+
 {% block content %}
-{% block extra_css %}
-<style>
-   .overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: url("/media/hero-img-2.jpg");
-    z-index: -1;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    background-size: cover;
-    }
-</style>
-{% endblock %}
 <div class="overlay"></div>
 <div class="container border mt-100 bg-dark">
   <div class="d-flex justify-content-center">

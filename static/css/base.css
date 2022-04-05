@@ -1,3 +1,8 @@
+body {
+  /* background: rgba(32, 33, 36, 1); */
+  background: linear-gradient(110deg, #000000 60%, #e1640d 60%);
+}
+
 .navbar-opacity {
   background: rgba(0, 0, 0, 0.8);
   color: #f2f2f2;
@@ -461,4 +466,13 @@ td img {
 .update-link,
 .remove-item {
   cursor: pointer;
+}
+
+.active-class {
+  pointer-events: none;
+  color: rgb(225, 100, 13) !important;
+}
+
+.breadcrumb {
+  background: transparent !important;
 }
