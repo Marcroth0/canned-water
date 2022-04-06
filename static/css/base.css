@@ -505,3 +505,16 @@ td img {
   background-position: center;
   z-index: 99999999999999;
 }
+
+.overlay-allauth {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("/media/animated-background.svg");
+  z-index: -1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
