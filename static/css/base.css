@@ -57,11 +57,11 @@ i {
 
 .jumbotron {
   background: url("/media/hero-img-2.jpg");
-  background-size: cover;
-  min-height: 800px;
+  min-height: 900px;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .btn:hover {
