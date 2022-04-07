@@ -24,7 +24,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="list-unstyled breadcrumb justify-content-center">
                                             <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
-                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_orders' %}"><span class="">My Orders</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_account' %}"><span class="">Handle Account</span></a></li>
                                             <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Account</span></a></li>
                                         </ol>
                                     </nav>
@@ -48,16 +48,45 @@
                             <div class="col-md-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-text">{{ user }},</h3>
+                                        <h3 class="card-text">Order History</h3>
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <div class="col">
-                                            <p>We created this product for the likes of you, the defyers of corporate greed. The people who aren't afraid of standing up for whats right, or sitting down (whatever it is you deem to be most comfortable, we're not in the business of judging...besides plastic, of course. As you're well aware of by now. <br><br> Now, {{ user }}, I truly do hope you find out product to among the good ones. Our goal has been to not only keep our mates hydrated, but keep plastic-hate fiercly regulated.<br><br> But for you, my friend {{ user }}, there's only one thing left to say. </p>
-                                            <button class="btn rounded" id="surprise-button" class="btn btn-black rounded-0">Surprise</button>
-                                            <div class="surprise-effect">
-                                                <h4>Hydrate for Climate, Mate.</h4>
-                                            </div>
+                                        <table class="table table-sm table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order Number</th>
+                                                    <th>Date</th>
+                                                    <th>Items</th>
+                                                    <th>Order Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for order in orders %}
+                                                    <tr>
+                                                        <td>
+                                                            <a href="{% url 'order_history' order.order_number %}"
+                                                            title="{{ order.order_number }}">
+                                                                {{ order.order_number|truncatechars:6 }}
+                                                            </a>
+                                                        </td>
+                                                        <td>{{ order.date }}</td>
+                                                        <td>
+                                                            <ul class="list-unstyled">
+                                                                {% for item in order.lineitems.all %}
+                                                                    <li class="small">
+                                                                        {% if item.product.has_sizes %}
+                                                                            Size {{ item.product.size|upper }}
+                                                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </td>
+                                                        <td>${{ order.grand_total }}</td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

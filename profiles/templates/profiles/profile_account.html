@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="overlay-animated"></div>
+
+    <div class="container-fluid mt-100">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="row text-center mt-2">
+                    <div class="col">
+                        <div class="row mb-3 justify-content-center">
+                            <div class="col">
+                                <h1 class="display-3">Dropp | Profile</h1>
+                            </div>
+                        </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-12 ">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="list-unstyled breadcrumb justify-content-center">
+                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page" href="#"><span class="">My Orders</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" aria-current="page"  href="{% url 'profile' %}"><span class="">Account</span></a></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        <div class="row justify-content-around">
+                            <div class="col-md-5 mb-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Handle Account</h3>
+                                    </div>
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-text">{{ user }},</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="col">
+                                            <p>We created this product for the likes of you, the defyers of corporate greed. The people who aren't afraid of standing up for whats right, or sitting down (whatever it is you deem to be most comfortable, we're not in the business of judging...besides plastic, of course. As you're well aware of by now. <br><br> Now, {{ user }}, I truly do hope you find out product to among the good ones. Our goal has been to not only keep our mates hydrated, but keep plastic-hate fiercly regulated.<br><br> But for you, my friend {{ user }}, there's only one thing left to say. </p>
+                                            <button class="btn rounded" id="surprise-button" class="btn btn-black rounded-0">Surprise</button>
+                                            <div class="surprise-effect">
+                                                <h4>Hydrate for Climate, Mate.</h4>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
