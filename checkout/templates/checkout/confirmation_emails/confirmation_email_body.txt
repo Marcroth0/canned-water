@@ -1,0 +1,21 @@
+Hey, {{ order.full_name }},
+
+This is a confirmation of your order at Dropp. Your infromation is below: 
+
+Order Number: {{ order.order_number }}
+Order Date: {{ Order.date }}
+
+Order total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be delivered to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}
+
+Registered phonenumber, in case we'd need it: {{ order.phone_number }}
+
+If you have any questions, or if the above information is incorrect in any way do please contact us. 
+
+Best regard,
+Dropp.
+
+Ps. Hydrate for... Ds. 
