@@ -518,3 +518,21 @@ td img {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+.form-control:focus {
+  border-color: #e1640d !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+}
+
+.overlay-animated {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("/media/animated-background.svg");
+  z-index: -1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
