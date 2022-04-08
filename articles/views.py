@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
@@ -18,9 +18,9 @@ def view_articles(request):
     
     return render(request, template, context)
 
-def article_details(request, article_id):
+def article_details(request, post_id):
 
-    article = get_object_or_404(Post, pk=article_id)
+    article = get_object_or_404(Post, pk=post_id)
     template = "articles/article_post_detail.html"
 
     context = {
@@ -55,3 +55,15 @@ def add_article_post(request):
     return render(request,
                   template,
                   context,)
+
+def delete_article_post(request, post_id):
+
+    if request.user.is_superuser:
+        post = get_object_or_404(Post, pk=post_id)
+        post.delete()
+        messages.info(request, "It's gone!")
+    else: 
+        messages.error(request, "Sorry, not in this world.")
+    
+    return redirect(reverse('view_articles'))
+

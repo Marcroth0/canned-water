@@ -15,7 +15,7 @@ class ArticlePostForm(forms.ModelForm):
 
     image = forms.ImageField(
         label="Image",
-        required=True,
+        required=False,
     )
 
     def __init__(self, *args, **kwargs):

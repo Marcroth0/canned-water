@@ -23,12 +23,12 @@
             <ol class="list-unstyled breadcrumb justify-content-center">
               <li class="text-secondary breadcrumb-item font-weight-bold">
                 <a class="text-light" href="{% url 'products' %}"
-                  ><span class="">Shop More</span></a
+                  ><span class="">Products</span></a
                 >
               </li>
               <li class="text-secondary breadcrumb-item font-weight-bold">
                 <a class="active-class" aria-current="page" href="#"
-                  ><span class="">My Shopping Bag</span></a
+                  ><span class="">Articles</span></a
                 >
               </li>
               <li class="text-secondary breadcrumb-item font-weight-bold">
@@ -43,43 +43,41 @@
       <div class="wrapper">
         <div class="row">
             {% for blog in blogs %} 
-              <div class="col-md-4">
-              <div
-                  class="card text-white"
-                  style="
-                  background-image: url('https://source.unsplash.com/600x900/?tech,street');
-                  "
-              >
-                  <img
-                  class="card-img d-none"
-                  src="{{ post.image.url }}"
-                  alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"
-                  />
-                  <div class="card-img-overlay d-flex flex-column">
-                    <div class="card-body">
-                        <small class="card-meta mb-2">{{ blog.title }}</small>
-                        <h4 class="card-title mt-0">
-                        <a class="text-white" herf="#"
-                            >{{ blog.description }}</a
-                        >
-                        </h4>
-                        <small><i class="far fa-clock"></i> date published</small>
-                    </div>
-                    <div class="card-footer">
-                        <div class="media">
-                          <img
-                              class="mr-3 rounded-circle"
-                              src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png"
-                              alt="Generic placeholder image"
-                              style="max-width: 50px"
-                          />
-                          <div class="media-body">
-                              <h6 class="my-0 text-white d-block">{{ blog.author }}</h6>
-                              <small>Credentials</small>
+              <div class="col-md-4 mt-2">
+                <div class="card shadow-lg text-white">
+                  {% if blog.image %}
+                    <img
+                    class="card-img"
+                    src="{{ blog.image.url }}"
+                    alt=""
+                    />
+                    {% else %}
+                    <img
+                    class="card-img"
+                    src="{{ MEDIA_URL }}noimage.png"
+                    alt=""
+                    />
+                    {% endif %}
+                    <div class="d-flex flex-column">
+                      <div class="card-body">
+                          <small class="card-meta mb-2">{{ blog.title }}</small>
+                          <h4 class="card-title mt-0">
+                          <a class="text-white" herf="#"
+                              >{{ blog.description }}</a
+                          >
+                          </h4>
+                          <small><i class="far fa-clock"></i>{{ blog.date_published }}</small>
+                      </div>
+                      <div class="card-footer">
+                          <div class="media">
+                            <div class="media-body">
+                                <h6 class="my-0 text-white d-block">{{ blog.author }}</h6>
+                                <small>Credentials</small>
+                            </div>
                           </div>
-                        </div>
+                      </div>
                     </div>
-                  </div>
+                </div>
               </div>
             {% endfor %}
           </div>
