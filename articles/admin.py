@@ -6,7 +6,8 @@ class ArticlePostAdmin(admin.ModelAdmin):
 
     list_display = ('title',
                     'author',
-                    'date_published',)
+                    'date_published',
+                    'featured_articles',)
 
     list_editable = ('featured_articles',)
 

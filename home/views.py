@@ -4,4 +4,5 @@ from articles.models import Post
 
 def index(request):
     featured = Product.objects.filter(featured_product=True)
-    return render(request, 'home/index.html', {'featured':featured})
+    featured_articles = Post.objects.filter(featured_articles=True)
+    return render(request, 'home/index.html', {'featured':featured, 'featured_articles':featured_articles})

@@ -1,0 +1,43 @@
+.card {
+  border: none;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 600px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.card img {
+  position: absolute !important;
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.card-body {
+  position: relative;
+  z-index: 2;
+  width: 60%;
+}
+
+.background-featured {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-device-width: 984px) {
+  /* styles for mobile browsers smaller than 984px; */
+  .jumbotron div {
+    flex-direction: column;
+  }
+}

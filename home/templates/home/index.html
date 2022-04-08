@@ -1,6 +1,10 @@
 {% extends "base.html" %} 
 
-{% load static %} 
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="load-spinner"></div>
@@ -137,6 +141,59 @@
       <a href="{% url 'products' %}" class="btn btn-secondary btn-lg" role="button" aria-disabled="true">View all products</a>
     </div>
   </div>
+</div>
+
+<div class="container-fluid background-featured align-items-center pb-3">
+  <div class="d-flex justify-content-center align-items-center mt-3 pt-3">
+    <div class="row">
+        <div class="col-sm just-fucking-water">
+          <h3 class="display-4">THE</h3>
+        </div>
+        <div class="col-sm just-fucking-water">
+          <h3 class="display-4">WISDOM</h3>
+        </div>
+      </div>
+    </div>
+   <div class="row no-gutters mt-3 d-flex justify-content-center align-items-center mb-3">
+            {% for featured in featured_articles %} 
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="card shadow-lg text-white">
+                  {% if featured.image %}
+                    <img
+                    class="card-img img-fluid"
+                    src="{{ featured.image.url }}"
+                    alt=""
+                    />
+                    {% else %}
+                    <img
+                    class="card-img img-fluid"
+                    src="{{ MEDIA_URL }}noimage.png"
+                    alt=""
+                    />
+                    {% endif %}
+                    <div class="d-flex flex-column">
+                      <div class="card-body">
+                          <small class="card-meta mb-2">{{ featured.title }}</small>
+                          <h4 class="card-title mt-0">
+                          <a class="text-white" herf="#"
+                              >{{ featured.description }}</a
+                          >
+                          </h4>
+                          <small><i class="far fa-clock"></i>{{ featured.date_published }}</small>
+                      </div>
+                      <div class="card-footer">
+                          <div class="media">
+                            <div class="media-body">
+                                <h6 class="my-0 text-white d-block">{{ featured.author }}</h6>
+                                <small>Credentials</small>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 
