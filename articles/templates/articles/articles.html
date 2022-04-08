@@ -8,7 +8,6 @@
 {% block content %}
 
 <div class="overlay-animated"></div>
-
 <div class="container-fluid mt-100">
   <div class="row justify-content-center">
     <div class="col-xl-10">
@@ -46,17 +45,17 @@
               <div class="col-md-4 mt-2">
                 <div class="card shadow-lg text-white">
                   {% if blog.image %}
-                    <img
+                   <a href="{% url 'article_details' blog.id %}"><img
                     class="card-img"
                     src="{{ blog.image.url }}"
                     alt=""
-                    /><a href="{% url 'article_details' post.id %}"></a>
+                    /></a>
                     {% else %}
-                    <img
+                    <a href="{% url 'article_details' blog.id %}"><img
                     class="card-img"
                     src="{{ MEDIA_URL }}noimage.png"
                     alt=""
-                    />
+                    /></a>
                     {% endif %}
                     <div class="d-flex flex-column">
                       <div class="card-body">

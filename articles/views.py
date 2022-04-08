@@ -11,23 +11,21 @@ def view_articles(request):
 
     blogs = Post.objects.all().order_by('-date_published')
 
-    template = "articles.html"
     context = {
         'blogs': blogs,
     }
     
-    return render(request, template, context)
+    return render(request, "articles/articles.html", context)
 
 def article_details(request, post_id):
 
     blog_post = get_object_or_404(Post, pk=post_id)
-    template = "articles/article_post_detail.html"
 
     context = {
         'post': blog_post,
     }
 
-    return render(request, template, context)
+    return render(request, "articles/article_post_detail.html", context)
 
 @login_required
 def add_article_post(request):
@@ -47,7 +45,7 @@ def add_article_post(request):
     else:
         messages.error(request, 'Sorry, but you are no Admin')
 
-    template = "add_article_post.html"
+    template = "articles/add_article_post.html"
 
     context = {
         "form": form,
