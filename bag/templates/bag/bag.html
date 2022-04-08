@@ -122,7 +122,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-<!-- {{ block.super }} -->
+{{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <script type="text/javascript">
     // Update quantity on click
@@ -135,10 +135,10 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
 
-        $.post(url, data)
+        $.post(url)
          .done(function() {
              location.reload();
          });
