@@ -20,11 +20,11 @@ def view_articles(request):
 
 def article_details(request, post_id):
 
-    article = get_object_or_404(Post, pk=post_id)
+    blog_post = get_object_or_404(Post, pk=post_id)
     template = "articles/article_post_detail.html"
 
     context = {
-        'article': article,
+        'post': blog_post,
     }
 
     return render(request, template, context)

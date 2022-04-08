@@ -50,7 +50,7 @@
                     class="card-img"
                     src="{{ blog.image.url }}"
                     alt=""
-                    />
+                    /><a href="{% url 'article_details' post.id %}"></a>
                     {% else %}
                     <img
                     class="card-img"

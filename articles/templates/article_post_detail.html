@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+<div class="overlay-animated"></div>
+
+<div class="container-fluid mt-100">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="row mb-3 justify-content-center text-center">
+                <div class="col">
+                    <h1 class="display-3">Dropp | Article Details</h1>
+                </div>
+            </div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 ">
+                        <nav aria-label="breadcrumb">
+                            <ol class="list-unstyled breadcrumb justify-content-center">
+                                <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
+                                <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page" href="#"><span class="">My Shopping Bag</span></a></li>
+                                <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'checkout' %}"><span class="">Checkout</span></a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-text text-center"></p>
+                            <hr>
+                        </div>
+                        <div class="card-body">
+                        <div class="col">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
