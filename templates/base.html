@@ -77,9 +77,9 @@
                             Products
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Product 1</a>
-                                <a class="dropdown-item" href="#">Product 2</a>
-                                <a class="dropdown-item" href="#">Product 3</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=product_water">Water</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=product_bags">Bags</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=product_hats">Hats</a>
                             </div>
                         </li>
                     </ul>
@@ -275,6 +275,6 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-    
+
   </body>
 </html>
