@@ -9,6 +9,7 @@ class ArticlePostForm(forms.ModelForm):
             "body",
             "description",
             "title",
+            
         }
 
     field_order = ['title', 'description','body', 'image']

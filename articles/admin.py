@@ -8,6 +8,8 @@ class ArticlePostAdmin(admin.ModelAdmin):
                     'author',
                     'date_published',)
 
+    list_editable = ('featured_articles',)
+
     ordering = ('-date_published', )
 
 

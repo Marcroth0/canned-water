@@ -9,6 +9,7 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True)
     body = models.TextField(null=False, blank=True)
     date_published = models.DateTimeField(auto_now=True)
+    featured_articles = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
