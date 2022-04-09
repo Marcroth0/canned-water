@@ -37,6 +37,9 @@ def add_article_post(request):
                 post = form.save(commit=False)
                 post.author = request.user
                 post.save()
+                messages.success(request, "Article uploaded!")
+                return redirect(reverse("article_details", args=[post.id]))
+
             else:
                 messages.error(request,
                                "Sorry! Didn't work")
@@ -65,3 +68,28 @@ def delete_article_post(request, post_id):
     
     return redirect(reverse('view_articles'))
 
+def edit_article_post(request, post_id):
+
+    if request.user.is_superuser:
+        post = get_object_or_404(Post, pk=post_id)
+        if request.method == "POST":
+            form = ArticlePostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                form.save()
+                messages.success(request,
+                                 "Done! Post updated!")
+                return redirect(reverse("article_details", args=[post.id]))
+        else:
+            form = ArticlePostForm(instance=post)
+    else:
+        messages.error(request, 'Nah, does not work like that')
+        # return redirect(reverse("view_articles"))
+
+    context = {
+        "form": form,
+        "post": post,
+    }
+
+    return render(request,
+                  "articles/edit_article_post.html",
+                  context)

@@ -29,6 +29,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h2 class="card-text text-center text-dark">{{ post.description }}</h2>
+                            {% if request.user.is_superuser %}
+                                <small class="float-right">
+                                    <a href="{% url 'edit_article_post' post.id %}">Edit</a> |
+                                    <a class="text-danger are-you-sure" href="{% url 'delete_article_post' post.id %}">Delete</a>
+                                </small>
+                            {% endif %}
                             <hr>
                         </div>
                         <div class="card-body">
