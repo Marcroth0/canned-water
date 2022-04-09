@@ -1,7 +1,8 @@
 body {
-  background: linear-gradient(110deg, #000000 60%, #e1640d 60%);
-    /* -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px); */
+    background-image: url("/media/background-wave.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .navbar-opacity {
@@ -9,8 +10,16 @@ body {
   color: #f2f2f2;
 }
 
+.nav-link:hover {
+  color: #e1640d !important;
+}
+
 .btn {
   background-color: #e1640d;
+}
+
+.dropdown-item:hover {
+  background-color: #e1640d !important;
 }
 
 .product-orange {
@@ -60,15 +69,16 @@ i {
 
 .jumbotron {
   background: url("/media/hero-img-2.jpg");
-  min-height: 900px;
+  min-height: 1200px;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .btn:hover {
-  background: #005477;
+  background: #000;
 }
 
 .main-menu {
@@ -516,4 +526,34 @@ td img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Footer */
+
+.footer {
+  padding: 50px 0;
+  background: #000;
+  color: #f2f2f2;
+}
+
+.footer h2 {
+  font-weight:bold;
+  padding:30px;
+}
+
+
+.footer ul a {
+  color: #f2f2f2;
+  text-decoration:none;
+  font-size: 16px;
+  font-weight:bold;
+
+}
+
+.footer span {
+  color: #e1640d;
+}
+
+.dot {
+  color: #e1640d;
 }

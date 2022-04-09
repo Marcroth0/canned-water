@@ -9,7 +9,7 @@
 {% block content %}
 <div class="load-spinner"></div>
 
-<div class="jumbotron d-flex flex-column align-items-center justify-content-center p-3 mb-5 background-blur">
+<div class="jumbotron jumbotron-fluid d-flex flex-column align-items-center justify-content-center p-3 mb-5 background-blur shadow-lg">
   <div class="container d-flex mt-auto justify-content-center">
     <div class="row">
       <div class="col-12">
@@ -154,7 +154,7 @@
         </div>
       </div>
     </div>
-   <div class="row no-gutters mt-3 d-flex justify-content-center align-items-center mb-3">
+   <div class="row mt-3 d-flex justify-content-center align-items-center mb-3">
             {% for featured in featured_articles %} 
               <div class="col-lg-2 col-md-4 col-sm-6">
                 <div class="card shadow-lg text-white">
@@ -194,7 +194,7 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-12 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center mb-3 mt-3">
       <a href="{% url 'view_articles' %}" class="btn btn-secondary btn-lg" role="button" aria-disabled="true">View all Articles</a>
     </div>
 </div>

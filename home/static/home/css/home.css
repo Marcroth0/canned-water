@@ -24,16 +24,16 @@
   width: 60%;
 }
 
-.background-featured {
+/* .background-featured {
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background-image: url("/media/featured-articles-background.svg");
+  background-image: url("/media/featured-articles-background-dark.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 @media only screen and (max-device-width: 984px) {
   /* styles for mobile browsers smaller than 984px; */
