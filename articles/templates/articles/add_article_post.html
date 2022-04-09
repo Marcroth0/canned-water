@@ -18,18 +18,18 @@
           <nav aria-label="breadcrumb">
             <ol class="list-unstyled breadcrumb justify-content-center">
               <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="text-light" href=""
-                  ><span class="">Shop More</span></a
+                <a class="text-light" href="{% url 'view_articles' %}"
+                  ><span class="">All Articles</span></a
                 >
               </li>
               <li class="text-secondary breadcrumb-item font-weight-bold">
                 <a class="active-class" aria-current="page" href="#"
-                  ><span class="">My Shopping Bag</span></a
+                  ><span class="">Add Article</span></a
                 >
               </li>
               <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="text-light" href="#"
-                  ><span class="">Checkout</span></a
+                <a class="text-light" href="{% url 'add_product' %}"
+                  ><span class="">Add Product</span></a
                 >
               </li>
             </ol>

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/add_product.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/edit_product.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -22,9 +22,9 @@
                                 <div class="col-12 ">
                                     <nav aria-label="breadcrumb">
                                         <ol class="list-unstyled breadcrumb justify-content-center">
-                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">All Products</span></a></li>
-                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'add_article_post' %}"><span class="">Add Article</span></a></li>
-                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Add Product</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'add_article_post' %}"><span class="">Add Articles</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'add_product' %}"><span class="">Add Product</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Edit Product</span></a></li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -33,18 +33,18 @@
                             <div class="col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3>Add Product</h3>
-                                        <h4>Fill in the information below and send it in!</h4>
+                                        <h3>Edit Product</h3>
+                                        <h4>Edit the information below and send it back in.</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-12">
-                                                <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+                                                <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                                                     {% csrf_token %}
                                                     {{ form | crispy }}
                                                     <div class="text-right">
                                                         <a class="btn rounded" href="{% url 'products' %}">Cancel</a>
-                                                        <button class="btn rounded" type="submit">Add Product</button>
+                                                        <button class="btn rounded" type="submit">Edit Product</button>
                                                     </div>
                                                 </form>
                                             </div>
