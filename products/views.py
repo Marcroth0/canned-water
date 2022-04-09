@@ -72,16 +72,6 @@ def quick_view(request, product_id):
 
 def add_product(request):
     """ Add a product to the store """
-    form = ProductForm()
-    template = 'products/add_product.html'
-    context = {
-        'form': form,
-    }
-
-    return render(request, template, context)
-
-def add_product(request):
-    """ Add a product to the store """
     
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
