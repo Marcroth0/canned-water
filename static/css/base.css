@@ -12,6 +12,8 @@ body {
 
 .nav-link:hover {
   color: #e1640d !important;
+  transform:scale(1.1)
+
 }
 
 .btn {
@@ -78,7 +80,8 @@ i {
 }
 
 .btn:hover {
-  background: #000;
+  background: #bc611f;
+  transform:scale(1.05)
 }
 
 .main-menu {
@@ -534,6 +537,9 @@ td img {
   padding: 50px 0;
   background: #000;
   color: #f2f2f2;
+  bottom: 0 !important;
+  width:100%;
+  margin-top:auto;
 }
 
 .footer h2 {

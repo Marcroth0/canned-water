@@ -9,7 +9,7 @@
 {% block content %}
 <div class="load-spinner"></div>
 
-<div class="jumbotron jumbotron-fluid d-flex flex-column align-items-center justify-content-center p-3 mb-5 background-blur shadow-lg">
+<div class="jumbotron  d-flex flex-column align-items-center justify-content-center p-3 mb-5 background-blur shadow-lg">
   <div class="container d-flex mt-auto justify-content-center">
     <div class="row">
       <div class="col-12">
@@ -63,7 +63,6 @@
     </div>
 </div>
 
-<!-- A fuck you to Plastic -->
 
 <!-- The goods -->
 <div class="container d-flex text-center justify-content-center mt-3 background-blur">
@@ -87,9 +86,9 @@
       {% for product in featured %}
           <div class="col-md-3">
             <div class="product-wrapper mb-45 text-center">
-                <div class="product-img"> <a href="#" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
+                <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
-                        <div class="product-action-style"> <button class="action-plus btn" type="button" title="Quick View" data-toggle="modal" data-target="#exampleModalCenter" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </button> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="#" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                        <div class="product-action-style"> <button class="action-plus btn" type="button" title="Quick View" data-toggle="modal" data-target="#exampleModalCenter" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </button> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
                     </div>
                 </div>
             </div>
@@ -159,17 +158,17 @@
               <div class="col-lg-2 col-md-4 col-sm-6">
                 <div class="card shadow-lg text-white">
                   {% if featured.image %}
-                    <img
+                    <a href="{% url 'article_details' featured.id %}"><img
                     class="card-img img-fluid"
                     src="{{ featured.image.url }}"
                     alt=""
-                    />
+                    /></a>
                     {% else %}
-                    <img
+                    <a href="{% url 'article_details' featured.id %}"><img
                     class="card-img img-fluid"
                     src="{{ MEDIA_URL }}noimage.png"
                     alt=""
-                    />
+                    /></a>
                     {% endif %}
                     <div class="d-flex flex-column">
                       <div class="card-body">
