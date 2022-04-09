@@ -83,7 +83,7 @@ def edit_article_post(request, post_id):
             form = ArticlePostForm(instance=post)
     else:
         messages.error(request, 'Nah, does not work like that')
-        # return redirect(reverse("view_articles"))
+        return redirect(reverse("view_articles"))
 
     context = {
         "form": form,
