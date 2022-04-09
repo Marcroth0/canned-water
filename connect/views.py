@@ -13,12 +13,12 @@ def contact_us(request):
             messages.success(request,
                              "Thank you for your message,\
                               we will be in touch soon")
-            return redirect("contact")
+            return redirect("contact_us")
         else:
             messages.error(request,
                            "Something went wrong,\
                             Please try again")
-            return redirect("contact")
+            return redirect("contact_us")
     else:
         if request.user.is_authenticated:
             try:

@@ -9,7 +9,7 @@
 {% block content %}
     <div class="overlay-animated"></div>
 
-    <div class="container-fluid mt-100">
+    <div class="container-fluid mt-100 shadow-lg">
         <div class="row justify-content-center">
             <div class="col-xl-10">
                 <div class="row text-center mt-2">
@@ -44,7 +44,7 @@
                                                     {% csrf_token %}
                                                     {{ form|crispy}}
                                                     <div class="text-right">
-                                                        <button class="btn rounded" type="submit">Send<i class="fa-solid fa-paper-plane"></i></button>
+                                                        <button class="btn rounded" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                                                     </div>
                                                 </form>
                                             </div>

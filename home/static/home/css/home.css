@@ -29,7 +29,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: #000;
+  background-image: url("/media/featured-articles-background.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
