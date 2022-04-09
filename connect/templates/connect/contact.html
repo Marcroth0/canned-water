@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'connect/css/connect.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="overlay-animated"></div>
+
+    <div class="container-fluid mt-100">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="row text-center mt-2">
+                    <div class="col">
+                        <div class="row mb-3 justify-content-center">
+                            <div class="col">
+                                <h1 class="display-3">Dropp | Contact Page</h1>
+                            </div>
+                        </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-12 ">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="list-unstyled breadcrumb justify-content-center">
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'products' %}"><span class="">All Products</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'view_articles' %}"><span class="">All Articles</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Contact Us</span></a></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Contact us</h3>
+                                        <h4>Fill in the information below and send it in!</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <form method="POST" action="{% url 'contact_us' %}" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    {{ form|crispy}}
+                                                    <div class="text-right">
+                                                        <button class="btn rounded" type="submit">Send<i class="fa-solid fa-paper-plane"></i></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
