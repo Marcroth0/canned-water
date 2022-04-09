@@ -1,1 +1,1 @@
-web: gunicorn canned_water.wsgi
+web: gunicorn canned_water.wsgi:application
