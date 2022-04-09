@@ -52,9 +52,12 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
-    'crispy_forms',
     'profiles',
     'articles',
+    
+
+    # other
+    'crispy_forms',
     'storages',
 ]
 
