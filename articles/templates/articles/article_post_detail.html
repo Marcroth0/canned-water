@@ -1,5 +1,9 @@
 {% extends "base.html" %} 
-{% load static %} 
+{% load static %}
+
+{% block extra_title %}
+{{ post.title }}
+{% endblock %}
 
 {% block content %}
 

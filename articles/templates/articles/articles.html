@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'articles/css/articles.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+Articles
+{% endblock %}
+
 {% block content %}
 
 <div class="overlay-animated"></div>
@@ -28,11 +32,6 @@
               <li class="text-secondary breadcrumb-item font-weight-bold">
                 <a class="active-class" aria-current="page" href="#"
                   ><span class="">Articles</span></a
-                >
-              </li>
-              <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="text-light" href="#"
-                  ><span class="">Checkout</span></a
                 >
               </li>
               {% if request.user.is_superuser %}

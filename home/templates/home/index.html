@@ -6,6 +6,10 @@
   <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+Home
+{% endblock %}
+
 {% block content %}
 <div class="load-spinner"></div>
 
@@ -26,14 +30,14 @@
       </div>
     </div>
   </div>
-  <a href="" class="mt-auto justify-content-center align-items-center"><i class="fa-solid fa-circle-down"></i></a>
+  <a href="#go-down" class="mt-auto justify-content-center align-items-center"><i class="fa-solid fa-circle-down"></i></a>
 </div>
 
 <!-- Did you know? -->
 <div class="container d-flex text-center justify-content-center background-blur">
   <div class="row">
     <div class="col-sm just-fucking-water">
-      <h3 class="display-4">JUST</h3>
+      <h3 class="display-4" id="go-down">JUST</h3>
     </div>
     <div class="col-sm just-fucking-water">
       <h3 class="display-4">F*CK*NG</h3>

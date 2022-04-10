@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'products/css/product_detail.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+{{ product.name }}
+{% endblock %}
+
 {% block content %}
 <div class="container mt-100 mb-3">
   <div class="row justify-content-center">
