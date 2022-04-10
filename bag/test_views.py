@@ -73,3 +73,5 @@ class TestBagViews(TestCase):
         self.assertEqual(str(messages[1]),
                          f'Removed {self.item.name} from your bag')
 
+
+
