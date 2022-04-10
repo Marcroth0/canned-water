@@ -3,7 +3,6 @@
   width: 100%;
   top: 0;
   left: 0;
-  position: fixed;
   background-image: url("/media/animated-background.svg");
   z-index: -1;
   background-position: center center;
@@ -20,6 +19,4 @@ th,
   color: #000 !important;
 }
 
-.footer {
-  position:absolute;
-}
+
