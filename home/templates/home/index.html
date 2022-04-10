@@ -32,7 +32,6 @@ Home
   </div>
   <a href="#go-down" class="mt-auto justify-content-center align-items-center"><i class="fa-solid fa-circle-down"></i></a>
 </div>
-<div id="modal-wrapper"></div>
 <!-- Did you know? -->
 <div class="container d-flex text-center justify-content-center background-blur">
   <div class="row">
@@ -54,7 +53,7 @@ Home
             <h1>Buy</h1>
             <p class="m-1 p-2">We get our money (Gracias) and you get to treat yourself to some invaluable hydration. (You're welcome)</p>
         </div>
-        <div class="col-sm align-items-center text-center justify-content-center border shadow m-1 p-2">
+        <div class="col-sm recycle align-items-center text-center justify-content-center border shadow m-1 p-2">
             <i class="fa-solid fa-recycle mt-2"></i>
             <h1>Recycle</h1>
             <p class="m-1 p-2">With your order we send a box(of non-lethal cardboard) which you can use to send it back to us.</p>
@@ -93,7 +92,7 @@ Home
                 <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
                         <div class="product-action-style"> 
-                          <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" > <i class="fa-solid fa-eye text-dark"></i> </a>
+                          <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" href="#" > <i class="fa-solid fa-eye text-dark"></i> </a>
                           <a class="action-heart" title="Wishlist" href="#" data-abc="true">
                             <i class="fa-solid fa-heart-circle-plus text-dark"></i> 
                           </a> 
@@ -109,52 +108,16 @@ Home
     </div>
 </div>
 
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-light" id="exampleModalLongTitle"><i class="fa-solid fa-eye text-light"></i></h5>
-        <button type="button text-light" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" class="text-light">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-        <div class="row">
-          <div class="col-md-6 product-img">
-            <img src="{{ product.image.url }}" alt="">
-          </div>
-          <div class="col-md-6">
-            <h1 class="text-light">{{ product.name }}</h1>
-            <hr>
-            <p class="text-light">{{ product.description }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="row justify-content-end align-items-center d-flex">
-          <div class="col-sm quantity justify-content-center text-center">
-                <span class="minus bg-light">-</span>
-                <input type="number" class="count" name="quantity" value="1">
-                <span class="plus bg-light">+</span>
-          </div>
-          <button type="button" class="col-sm btn"><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
+<div id="modal-wrapper"></div>
 <!-- All products button -->
-<div class="container d-flex justify-content-center"">
+<div class="container d-flex background-blur justify-content-center"">
   <div class="row">
     <div class="col">
       <a href="{% url 'products' %}" class="btn btn-secondary btn-lg" role="button" aria-disabled="true">View all products</a>
     </div>
   </div>
 </div>
-
-<div class="container-fluid background-featured align-items-center pb-3">
+<div class="container-fluid background-featured background-blur align-items-center pb-3">
   <div class="d-flex justify-content-center align-items-center mt-3 pt-3">
     <div class="row">
         <div class="col-sm just-fucking-water">
@@ -205,7 +168,7 @@ Home
             </div>
         {% endfor %}
     </div>
-    <div class="col-12 d-flex justify-content-center mb-3 mt-3">
+    <div class="col-12 d-flex justify-content-center mb-3 mt-3 background-blur">
       <a href="{% url 'view_articles' %}" class="btn btn-secondary btn-lg" role="button" aria-disabled="true">View all Articles</a>
     </div>
 </div>
@@ -214,20 +177,20 @@ Home
 {% endblock %}
 
 {% block postloadjs %}
-
-    $(document).ready(function() {
-        $(".open-modal-wrapper").on("click", function() {
-            $.ajax({
-                url: $(this).attr("data-url"),
-                type: 'GET',
-                cache: false,
-                success: function(data) {
-                    document.getElementById('modal-wrapper').innerHTML = data;
-                    $(".modal").addClass("modal-display")
-                    $("#modal-wrapper").modal('show');
-                }
-            });
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".open-modal-wrapper").on("click", function() {
+        $.ajax({
+            url: $(this).attr("data-url"),
+            type: 'GET',
+            cache: false,
+            success: function(data) {
+                document.getElementById('modal-wrapper').innerHTML = data;
+                $(".modal").addClass("modal-display")
+                $("#modal-wrapper").modal('show');
+            }
         });
     });
-
+});
+</script>
 {% endblock %}
