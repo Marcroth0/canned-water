@@ -77,21 +77,6 @@ All Products
     //         $(this).addClass("product-orange");
     //     }
     // });
-
-    $(document).ready(function() {
-        $(".open-modal-wrapper").on("click", function() {
-            $.ajax({
-                url: $(this).attr("data-url"),
-                type: 'GET',
-                cache: false,
-                success: function(data) {
-                    document.getElementById('modal-wrapper').innerHTML = data;
-                    $(".modal").addClass("modal-display")
-                    $("#modal-wrapper").modal('show');
-                }
-            });
-        });
-    });
 </script>
 {% endblock %}
 

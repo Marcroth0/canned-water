@@ -32,7 +32,7 @@ Home
   </div>
   <a href="#go-down" class="mt-auto justify-content-center align-items-center"><i class="fa-solid fa-circle-down"></i></a>
 </div>
-
+<div id="modal-wrapper"></div>
 <!-- Did you know? -->
 <div class="container d-flex text-center justify-content-center background-blur">
   <div class="row">
@@ -92,7 +92,15 @@ Home
             <div class="product-wrapper mb-45 text-center">
                 <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
-                        <div class="product-action-style"> <button class="action-plus btn" type="button" title="Quick View" data-toggle="modal" data-target="#exampleModalCenter" data-abc="true"> <i class="fa-solid fa-eye text-dark"></i> </button> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                        <div class="product-action-style"> 
+                          <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" > <i class="fa-solid fa-eye text-dark"></i> </a>
+                          <a class="action-heart" title="Wishlist" href="#" data-abc="true">
+                            <i class="fa-solid fa-heart-circle-plus text-dark"></i> 
+                          </a> 
+                          <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true">
+                            <i class="fa-solid fa-cart-shopping text-dark"></i> 
+                          </a> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,7 +110,7 @@ Home
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -135,7 +143,7 @@ Home
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- All products button -->
 <div class="container d-flex justify-content-center"">
@@ -202,5 +210,24 @@ Home
     </div>
 </div>
 
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    $(document).ready(function() {
+        $(".open-modal-wrapper").on("click", function() {
+            $.ajax({
+                url: $(this).attr("data-url"),
+                type: 'GET',
+                cache: false,
+                success: function(data) {
+                    document.getElementById('modal-wrapper').innerHTML = data;
+                    $(".modal").addClass("modal-display")
+                    $("#modal-wrapper").modal('show');
+                }
+            });
+        });
+    });
 
 {% endblock %}
