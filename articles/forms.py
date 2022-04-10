@@ -10,10 +10,11 @@ class ArticlePostForm(forms.ModelForm):
             "body",
             "description",
             "title",
+            'featured_articles',
             
         }
 
-    field_order = ['title', 'description','body', 'image']
+    field_order = ['title', 'description','body', 'image', 'featured_articles']
 
     image = forms.ImageField(
         label="Image",

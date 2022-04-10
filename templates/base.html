@@ -188,17 +188,17 @@
                 <a href="#"><i class="fa-solid fa-circle-info mr-2"></i> About</a>
                 </li>
                 <li>
-                <a href="#"><i class="fa-solid fa-glass-water-droplet mr-2"></i> Products</a>
+                <a href="{% url 'products' %}"><i class="fa-solid fa-glass-water-droplet mr-2"></i> Products</a>
                 </li>
                 <li>
-                <a href="#"><i class=""></i> Something</a>
+                <a href="#"><i class=""></i> Contact</a>
                 </li>
                 <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class=""></i>
-                                Support</a>
+                                Account</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                    <a href="#">Delivery Information</a>
+                    <a href="#">Profile</a>
                     </li>
                     <li>
                     <a href="#">Privacy Policy</a>
@@ -209,7 +209,7 @@
                 </ul>
                 </li>
                 <li>
-                <a href="#"><i class="fa-solid fa-phone mr-2"></i> Contact</a>
+                <a href="{% url 'contact_us' %}"><i class="fa-solid fa-phone mr-2"></i> Contact</a>
                 </li>
             </ul>
 
@@ -241,10 +241,10 @@
                 </div>
             </form>
             <ul class="social-icons">
-                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#" target="_blank" title=""><i class="fa-solid fa-arrows-spin"></i></a></li>
+                <li><a href="https://twitter.com/" target="_blank" title=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://facebook.com/" target="_blank" title=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://instagram.com/" target="_blank" title=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/masy.201251005" target="_blank" title=""><i class="fa-solid fa-arrows-spin"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -287,19 +287,19 @@
             </div>
             <div class="row mb-3 mt-2 d-flex text-center justify-content-center">
                 <div class="col-2">
-                    <a href="#" class="text-light">Home</a>
+                    <a href="{% url 'home' %}" class="text-light">Home</a>
                 </div>
                 <div class="col-2">
-                    <a href="#" class="text-light">Contact</a>
+                    <a href="{% url 'contact_us' %}" class="text-light">Contact</a>
                 </div>
                 <div class="col-2">
-                    <a href="#" class="text-light">Profile</a>
+                    <a href="{% url 'profile' %}" class="text-light">Profile</a>
                 </div>
                 <div class="col-2">
-                    <a href="#" class="text-light">Products</a>
+                    <a href="{% url 'products' %}" class="text-light">Products</a>
                 </div>
                 <div class="col-2">
-                    <a href="#" class="text-light">Articles</a>
+                    <a href="{% url 'view_articles' %}" class="text-light">Articles</a>
                 </div>
             </div>
             <div class="p-2 d-flex justify-content-center">
