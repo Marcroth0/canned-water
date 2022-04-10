@@ -17,15 +17,15 @@ Home
   <div class="container d-flex mt-auto justify-content-center">
     <div class="row">
       <div class="col-12">
-        <span class="text-white"><h1 class="display-3">Hydrate for: </h1></span>
+        <span class="text-white"><h1 class="display-3 shadow">Hydrate for: </h1></span>
       </div>
     </div>
     <div class="row">
       <div class="word-animation col-12">
         <div class="message message-1 m-2 text-light">
-          <span class="word1"><h1 class="display-3">CLIMATE</h1></span>
-          <span class="word2"><h1 class="display-3">PLASTIC-HATE</h1></span>
-          <span class="word3"><h1 class="display-3"><u>YOU, MATE</u></h1></span>
+          <span class="word1"><h1 class="display-3 shadow">CLIMATE</h1></span>
+          <span class="word2"><h1 class="display-3 shadow">PLASTIC-HATE</h1></span>
+          <span class="word3"><h1 class="display-3 shadow"><u>YOU, MATE</u></h1></span>
         </div>
       </div>
     </div>
@@ -87,13 +87,15 @@ Home
 <div class="container d-flex justify-content-center mt-75 background-blur">
     <div class="row">
       {% for product in featured %}
-          <div class="col-md-3">
+          <div class="col-md-3 product_data">
+            {% csrf_token %}
+            <input type="hidden" value="{{ product.id }}" class="prod_id">
             <div class="product-wrapper mb-45 text-center">
                 <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
                         <div class="product-action-style"> 
                           <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" href="#" > <i class="fa-solid fa-eye text-dark"></i> </a>
-                          <a class="action-heart" title="Wishlist" href="#" data-abc="true">
+                          <a class="action-heart AddToWishlist" title="Wishlist" href="#" data-abc="true">
                             <i class="fa-solid fa-heart-circle-plus text-dark"></i> 
                           </a> 
                           <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true">

@@ -42,11 +42,13 @@ All Products
     <div class="container d-flex justify-content-center mt-100 background-blur">
         <div class="row">
             {% for product in products %}
-                <div class="col-md-3 col-sm-4">
+                <div class="col-md-3 col-sm-4 product_data">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{ product.id }}" class="prod_id">
                     <div class="product-wrapper mb-45 text-center">
                         <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
                             <div class="product-action">
-                                <div class="product-action-style"> <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'quick_view' product.id %}" href="#"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                                <div class="product-action-style"> <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'quick_view' product.id %}" href="#"> <i class="fa-solid fa-eye text-dark"></i> </a> <a class="action-heart AddToWishlist" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
                             </div>
                         </div>
                     </div>

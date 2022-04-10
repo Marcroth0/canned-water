@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+Wish List
+{% endblock %}
+
+{% block content %}
+    <div class="overlay-animated"></div>
+    <div class="container-fluid mt-100">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="row text-center mt-2">
+                    <div class="col">
+                        <div class="row mb-3 justify-content-center">
+                            <div class="col">
+                                <h1 class="display-3">Dropp | Wish List</h1>
+                            </div>
+                        </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-12 ">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="list-unstyled breadcrumb justify-content-center">
+                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_account' %}"><span class="">Handle Account</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Account</span></a></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        <div class="row justify-content-around">
+                            <div class="col-md-5 mb-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Your Saved Items</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ wishlist }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

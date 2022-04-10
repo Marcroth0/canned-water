@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from .models import UserProfile
+from .models import UserProfile, WishList
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
+from products.models import Product
 
 from .forms import UserProfileForm
 
@@ -51,3 +52,32 @@ def order_history(request, order_number):
 def profile_account(request):
 
     return render(request, 'profiles/profile_account.html')
+
+def wish_list(request):
+    wishlist = WishList.objects.filter(user=request.user)
+
+    template = 'profiles/wish_list.html'
+    context = {
+        'wishlist': wishlist,
+    }
+
+    return render(request, template, context)
+
+# def add_to_wish_list(request):
+#     console.log("here")
+#     if request.method == 'POST':
+#         console.log(request.data)
+#         if request.user.is_authenticated:
+#             prod_id = int(request.POST.get('product_id'))
+#             product_check = Product.objects.get(id=prod_id)
+#             if(product_check):
+#                 if(WishList.objects.filter(user=request.user, product_id=prod_id)):
+#                     messages.info(request, 'Product is already in there.')
+#                 else:
+#                     WishList.objects.create(user=request.user, product_id=prod_id)
+#                     messages.success(request, 'Product added to Wishlist.')
+#             else:
+#                 messages.error(request, 'Sorry, cannot find the product')
+#         else:
+#             messages.error(request, 'You have to be logged in.')
+#     return redirect('/')
