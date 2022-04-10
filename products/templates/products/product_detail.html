@@ -1,15 +1,40 @@
 {% extends 'base.html' %}
 {% load static %} 
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/product_detail.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="overlay"></div>
-<div class="container border mt-100 bg-dark">
+<div class="container mt-100 mb-3">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="row mb-3 justify-content-center text-center">
+        <div class="col">
+            <h1 class="display-3">Dropp | Product Detail</h1>
+        </div>
+    </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-12 ">
+                <nav aria-label="breadcrumb">
+                    <ol class="list-unstyled breadcrumb justify-content-center">
+                        <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
+                        <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page" href="#"><span class="">Product Detail</span></a></li>
+                        <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" aria-current="page"  href="{% url 'view_bag' %}"><span class="">Bag</span></a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container border shadow-lg">
   <div class="d-flex justify-content-center">
     <div class="row">
-      <div class="col-md-6 product-img">
-        <img src="{{ product.image.url }}" alt="">
+      <div class="col-md-6 product-img mt-3">
+        <img src="{{ product.image.url }}" alt="Product Image">
       </div>
-      <div class="col-md-6 mt-3">
+      <div class="col-md-6 mt-3 mt-3">
         {% if request.user.is_superuser %}
           <small class="float-right">
               <a href="{% url 'edit_product' product.id %}">Edit</a> |

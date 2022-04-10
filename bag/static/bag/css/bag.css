@@ -19,3 +19,7 @@ th,
 .count {
   color: #000 !important;
 }
+
+.footer {
+  position:absolute;
+}
