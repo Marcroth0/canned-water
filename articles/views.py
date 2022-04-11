@@ -3,8 +3,8 @@ from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
-from .models import Post
-from .forms import ArticlePostForm
+from .models import Post, Comment
+from .forms import ArticlePostForm, CommentForm
 
 def view_articles(request):
     """View to return all articles """
@@ -18,11 +18,14 @@ def view_articles(request):
     return render(request, "articles/articles.html", context)
 
 def article_details(request, post_id):
-
+    comments = Comment.objects.filter(post=blog_post).order_by('-date')
+    form = CommentForm()
     blog_post = get_object_or_404(Post, pk=post_id)
 
     context = {
         'post': blog_post,
+        'comments': comments,
+        'form': form,
     }
 
     return render(request, "articles/article_post_detail.html", context)
