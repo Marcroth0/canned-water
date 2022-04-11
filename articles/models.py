@@ -22,7 +22,8 @@ class Comment(models.Model):
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_published = models.DateTimeField(auto_now=True)
-
+    comment = models.TextField()
+    
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
