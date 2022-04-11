@@ -25,21 +25,45 @@ Wish List
                                 <div class="col-12 ">
                                     <nav aria-label="breadcrumb">
                                         <ol class="list-unstyled breadcrumb justify-content-center">
-                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="text-light" href="{% url 'products' %}"><span class="">Shop More</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold "><a class="active-class" aria-current="page" href="#"><span class="">Wishlist</span></a></li>
                                             <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_account' %}"><span class="">Handle Account</span></a></li>
-                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="active-class" aria-current="page"  href="#"><span class="">Account</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile' %}"><span class="">Profile</span></a></li>
                                         </ol>
                                     </nav>
                                 </div>
                             </div>
                         <div class="row justify-content-around">
-                            <div class="col-md-5 mb-3">
+                            <div class="col-md-12 mb-3">
                                 <div class="card">
                                     <div class="card-header">
                                         <h3>Your Saved Items</h3>
                                     </div>
-                                    <div class="card-body">
-                                        {{ wishlist }}
+                                    <div class="card-body wishdata">
+                                        {% if wishlist %}
+                                            {% for item in wishlist %}
+                                                <div class="row product_data">
+                                                    <div class="col-md-2 my-auto">
+                                                        <a href="{% url 'product_detail' item.product.id %}"><img src="{{ item.product.image.url }}" class="img-fluid" alt="Product Image"></a>
+                                                    </div>
+                                                    <div class="col-md-3 my-auto">
+                                                        <h6>{{ item.product.name }}</h6>
+                                                    </div>
+                                                    <div class="col-md-2 my-auto">
+                                                        <h6>${{item.product.price  }}</h6>
+                                                    </div>
+                                                    <div class="col-md-3 my-auto">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" class="prod_id" value="{{ item.product.id }}">
+                                                        <a href="{% url 'product_detail' item.product.id %}"><button class="btn rounded text-light shadow">Product</button></a>
+                                                    </div>
+                                                    <div class="col-md-2 my-auto">
+                                                        <a href="#"><button class="btn rounded text-light delete-wishlist-item shadow">Delete</button></a>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% else %}
+                                        <h4>Your Wishlist is empty</h4>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

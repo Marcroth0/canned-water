@@ -4,6 +4,7 @@ from .models import UserProfile, WishList
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
 from products.models import Product
+from django.http import HttpResponseRedirect
 
 from .forms import UserProfileForm
 
@@ -53,6 +54,7 @@ def profile_account(request):
 
     return render(request, 'profiles/profile_account.html')
 
+
 def wish_list(request):
     wishlist = WishList.objects.filter(user=request.user)
 
@@ -63,21 +65,36 @@ def wish_list(request):
 
     return render(request, template, context)
 
-# def add_to_wish_list(request):
-#     console.log("here")
-#     if request.method == 'POST':
-#         console.log(request.data)
-#         if request.user.is_authenticated:
-#             prod_id = int(request.POST.get('product_id'))
-#             product_check = Product.objects.get(id=prod_id)
-#             if(product_check):
-#                 if(WishList.objects.filter(user=request.user, product_id=prod_id)):
-#                     messages.info(request, 'Product is already in there.')
-#                 else:
-#                     WishList.objects.create(user=request.user, product_id=prod_id)
-#                     messages.success(request, 'Product added to Wishlist.')
-#             else:
-#                 messages.error(request, 'Sorry, cannot find the product')
-#         else:
-#             messages.error(request, 'You have to be logged in.')
-#     return redirect('/')
+
+@login_required
+def add_to_wish_list(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    wish_product = get_object_or_404(WishList, user=request.user.id)
+
+    if product in wish_product.product.all():
+        messages.info(request, "It's already in there")
+    else:
+        wish_product = WishList.objects.create(user=request.user)
+        wish_product.product.add(product)
+        messages.success(request, "It has been added! ")
+
+
+    return redirect('/')
+
+@login_required
+def delete_wishlist_item(request, product_id):
+    
+    if request.user.is_authenticated:
+        product = get_object_or_404(Product, pk=product_id)
+        wish_product = get_object_or_404(WishList, user=request.user.id)
+
+        if product in wish_product.product.all():
+            wish_product.product.delete()
+            messages.info(request, "It's gonezo!")
+        else:
+            wish_product.product.add(product)
+            messages.success(request, "Sorry, can't find it...")
+    else:
+        messages.error(request, "You have to be logged in.")
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

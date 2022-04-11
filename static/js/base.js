@@ -39,24 +39,44 @@ $(document).ready(function () {
                 $('#footer').css('margin-top', '0px');
         }, 250);
 
-        $('.AddToWishlist').click(function (e) {
-            e.preventDefault();
+        // $('.AddToWishlist').click(function (e) {
+        //     e.preventDefault();
 
-            var product_id = $(this).closest('.product_data').find('.prod_id').val();
-            var token = $('input[name=csrfmiddlewaretoken]').val();
+        //     var product_id = $(this).closest('.product_data').find('.prod_id').val();
+        //     var token = $('input[name=csrfmiddlewaretoken]').val();
         
-            $.ajax({
-                method: "POST",
-                url: "/add_to_wish_list/",
-                data: {
-                    'product_id': product_id,
-                },
-                headers: { 'X-CSRFToken' : token },
-                success: function (request) {
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "/add_to_wish_list/",
+        //         data: {
+        //             'product_id': product_id,
+        //         },
+        //         headers: { 'X-CSRFToken' : token },
+        //         success: function (request) {
                     
-                    alert(request.responseText);
-                }
-            });
-        });
+        //             alert(request.responseText);
+        //         }
+        //     });
+        // });
+
+        // $('delete-wishlist-item').click(function (e) {
+        //     e.preventDefault();
+        //     var product_id = $(this).closest('.product_data').find('.prod_id').val();
+        //     var token = $('input[name=csrfmiddlewaretoken]').val();
+            
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "/delete_wishlist_item/",
+        //         data: {
+        //             'product_id': product_id,
+        //         },
+        //         headers: { 'X-CSRFToken' : token },
+        //         success: function (request) {
+        //             alert(request.responseText);
+        //             // $('.wishdata').load(location.href + " .wishdata")
+        //         }
+        //     });
+        // })
+        
     });
 

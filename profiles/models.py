@@ -37,6 +37,6 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     instance.userprofile.save()
 
 class WishList(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    product = models.ManyToManyField(Product, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
