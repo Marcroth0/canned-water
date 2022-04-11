@@ -79,7 +79,7 @@ def add_to_wish_list(request, product_id):
         )
     else:
         messages.error(request, "Sorry, you're not logged in.")
-        
+
     context = {
         'from_profile': True,
     }
@@ -90,17 +90,17 @@ def add_to_wish_list(request, product_id):
 @login_required
 def delete_wishlist_item(request, product_id):
     
+    user = get_object_or_404(UserProfile, user=request.user)
+    product = get_object_or_404(Product, pk=product_id)
     if request.user.is_authenticated:
-        product = get_object_or_404(Product, pk=product_id)
-        wish_product = get_object_or_404(WishList, user=request.user.id)
-
-        if product in wish_product.product.all():
-            wish_product.product.delete()
-            messages.info(request, "It's gonezo!")
-        else:
-            wish_product.product.add(product)
-            messages.success(request, "Sorry, can't find it...")
+        WishList.objects.filter(product=product, user_wish=user).delete()
+        messages.success(
+        request, 'It is gonezo!')
     else:
-        messages.error(request, "You have to be logged in.")
+        messages.error(request, "Sorry, you're not logged in.")
+        
+    context = {
+        'from_profile': True,
+    }
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'), context)

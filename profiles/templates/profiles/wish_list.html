@@ -54,10 +54,10 @@ Wish List
                                                     <div class="col-md-3 my-auto">
                                                         {% csrf_token %}
                                                         <input type="hidden" class="prod_id" value="{{ product.id }}">
-                                                        <a href=""><button class="btn rounded text-light shadow">Product</button></a>
+                                                        <a href="{% url 'product_detail' product.product.id %}"><button class="btn rounded text-light shadow">Product</button></a>
                                                     </div>
                                                     <div class="col-md-2 my-auto">
-                                                        <a href="#"><button class="btn rounded text-light delete-wishlist-item shadow">Delete</button></a>
+                                                        <a href="{% url 'delete_wishlist_item' product.product.id %}"><button class="btn rounded text-light delete-wishlist-item shadow">Delete</button></a>
                                                     </div>
                                                 </div>
                                             {% endfor %}
