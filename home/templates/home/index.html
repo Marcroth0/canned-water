@@ -30,7 +30,7 @@ Home
       </div>
     </div>
   </div>
-  <a href="#go-down" class="mt-auto justify-content-center align-items-center"><i class="fa-solid fa-circle-down"></i></a>
+  <a href="#go-down" class="mt-auto justify-content-center align-items-center" aria-label="go down page"><i class="fa-solid fa-circle-down"></i></a>
 </div>
 <!-- Did you know? -->
 <div class="container d-flex text-center justify-content-center background-blur">
@@ -94,11 +94,11 @@ Home
                 <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a> 
                     <div class="product-action">
                         <div class="product-action-style"> 
-                          <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" href="#" > <i class="fa-solid fa-eye text-dark"></i> </a>
-                          <a class="action-heart AddToWishlist" title="Wishlist" href="{% url 'add_to_wish_list' product.id %}" data-abc="true">
+                          <a class="action-plus open-modal-wrapper" title="Quick View" data-toggle="modal" data-target="#modal-wrapper" data-url="{% url 'featured_details' product.id %}" href="#" aria-label="opens new window, showing product detail on same page"> <i class="fa-solid fa-eye text-dark"></i> </a>
+                          <a class="action-heart AddToWishlist" title="Wishlist" href="{% url 'add_to_wish_list' product.id %}" data-abc="true" aria-label="add to wishlist">
                             <i class="fa-solid fa-heart-circle-plus text-dark"></i> 
                           </a> 
-                          <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true">
+                          <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true" aria-label="add to cart">
                             <i class="fa-solid fa-cart-shopping text-dark"></i> 
                           </a> 
                         </div>

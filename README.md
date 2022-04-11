@@ -1,6 +1,8 @@
-# relationship-quarrel
+# canned-water
 
 ![amiresponsive]()
+
+Welcome to Dropp. Website! Dropp is an ecommerce platform, equipped with authentication (user-accounts) that not only sells its brand but also sells their products and merchandise. All using HTML, CSS(bootstrap), Javascript(jQuery), Python, Django, and deployment to Heroku with AWS holding the reigns of static files. Not to mention Stripe, the payment system integrated.  
 
 Live link: https://quarrel2022.herokuapp.com/
 
@@ -32,6 +34,8 @@ View my User Stories and planning [here](https://github.com/Marcroth0/relationsh
 # UX
 
 ## Strategy
+
+The initial and primary goal of the website is to create an e-commerce platform that looks great. This is not 100% dedicated to ecommerce, but to the brand itself. Sell the brand, sell the product. It allows a user to 
 
 Target Audience:
 
