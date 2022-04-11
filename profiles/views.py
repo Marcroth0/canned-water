@@ -49,12 +49,13 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-
+    
+@login_required
 def profile_account(request):
 
     return render(request, 'profiles/profile_account.html')
 
-
+@login_required
 def wish_list(request):
     user = get_object_or_404(UserProfile, user=request.user)
     wishlist = WishList.objects.filter(user_wish=user)
