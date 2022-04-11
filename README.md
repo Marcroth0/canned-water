@@ -2,12 +2,11 @@
 
 ![amiresponsive]()
 
-Welcome to Dropp. Website! Dropp is an ecommerce platform, equipped with authentication (user-accounts) that not only sells its brand but also sells their products and merchandise. All using HTML, CSS(bootstrap), Javascript(jQuery), Python, Django, and deployment to Heroku with AWS holding the reigns of static files. Not to mention Stripe, the payment system integrated.  
+Welcome to Dropp. Website! Dropp is an ecommerce platform, equipped with authentication (user-accounts) that not only sells its brand but also sells their products and merchandise. All using HTML, CSS(bootstrap), Javascript(jQuery), Python, Django, and deployment to Heroku with AWS holding the reigns of static files. Not to mention Stripe, the payment system integrated.
 
 Live link: https://quarrel2022.herokuapp.com/
 
 ## About:
-
 
 ### Table of Contents
 
@@ -27,15 +26,13 @@ Live link: https://quarrel2022.herokuapp.com/
 
 ### User Stories
 
-
-
 View my User Stories and planning [here](https://github.com/Marcroth0/relationship-quarrel/issues).
 
 # UX
 
 ## Strategy
 
-The initial and primary goal of the website is to create an e-commerce platform that looks great. This is not 100% dedicated to ecommerce, but to the brand itself. Sell the brand, sell the product. It allows a user to easily navigate the site and interact with the products via reviews, as well as the owners via the contact form. 
+The initial and primary goal of the website is to create an e-commerce platform that looks great. This is not 100% dedicated to ecommerce, but to the brand itself. Sell the brand, sell the product. It allows a user to easily navigate the site and interact with the products via reviews, as well as the owners via the contact form.
 
 Target Audience:
 
@@ -43,74 +40,73 @@ Target Audience:
 - People who are tired of plastic
 - People who are environmentally friendly
 
-The visitors are looking for a product that makes caring about the environment cool. 
+The visitors are looking for a product that makes caring about the environment cool.
 
 ## Design/Structure
 
+Apps and their core functionality:
 
-Apps and their core functionality: 
-
-- Checkout 
-Handle successful checkouts and saves order to userprofile,
-Validating checkout process,
-Caches the cart and user data, returns error of unvalid
+- Checkout
+  Handle successful checkouts and saves order to userprofile,
+  Validating checkout process,
+  Caches the cart and user data, returns error of unvalid
 
 - Connect
-View to let users send email to owner of site
+  View to let users send email to owner of site
 
 - Home
-A view to show individual product details through ajax
-A view for index
+  A view to show individual product details through ajax
+  A view for index
 
 - Products
-A view to show all products, including sorting and search queries
-A view to show individual product details
-Add/delete user reviews
-add/edit/delete products
+  A view to show all products, including sorting and search queries
+  A view to show individual product details
+  Add/delete user reviews
+  add/edit/delete products
 
 - Profiles
-Get and view userprofile including: Get and view order history
-Edit/add/delete Wishlist items. 
+  Get and view userprofile including: Get and view order history
+  Edit/add/delete Wishlist items.
 
 - Bag
-A view that renders the bag page
-Add a quantity of the specified product to the shopping bag
-Adjust the quantity of the specified product to the shopping bag
-Delete the item from the shopping bag
+  A view that renders the bag page
+  Add a quantity of the specified product to the shopping bag
+  Adjust the quantity of the specified product to the shopping bag
+  Delete the item from the shopping bag
 
 - Articles
-Add, edit, and delete Articles/blogs
+  Add, edit, and delete Articles/blogs
 
 ### Databases:
 
-### Models: 
+### Models:
 
-- Articles, Models Post: 
-title: Stores title of article
-author: Stores the author(ForeignKey) taken from User
-description = Stores the description of the Blog tied to user
-image: Imagefield
-body: The content
-date_published: Automatic date_published field
-featured_articles: Boolean field, if true = featured. 
+- Articles, Models Post:
+  title: Stores title of article
+  author: Stores the author(ForeignKey) taken from User
+  description = Stores the description of the Blog tied to user
+  image: Imagefield
+  body: The content
+  date_published: Automatic date_published field
+  featured_articles: Boolean field, if true = featured.
 
 - Bag, Models Order/OrderlineItem:
-Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
+  Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
 
 - Connect Models:
-email Stores information about used email
-title: Subject of email
-content: Content of email
+  email Stores information about used email
+  title: Subject of email
+  content: Content of email
 
-- Profile: 
-A user profile model for maintaining default
-delivery information(address, email, phone-number, etcetera) and order history
+- Profile:
+  A user profile model for maintaining default
+  delivery information(address, email, phone-number, etcetera) and order history
 
-- Review: 
-product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys. 
-content: Stores content of review
-stars: stores the rate
-date_published: Stores when the review was published
+- Review:
+  product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys.
+  content: Stores content of review
+  stars: stores the rate
+  date_published: Stores when the review was published
 
 Below is a diagram of the correlation between the models:
 
@@ -121,16 +117,15 @@ Below is a diagram of the correlation between the models:
 I wireframed it using Balsamiq:
 
 Landing page:
+![wireframe](readme-files/readme/balsamiq-landing-readme.png)
 
-![wireframe]()
+Structure:
+![wireframe](readme-files/readme/balsamiq-overall-readme.png)
 
-Landing page - Mobile:
+Products Page:
+![wireframe](readme-files/readme/balsamiq-products-readme.png)
 
-![wireframe]()
-
-A post full screen:
-
-![wireframe]()
+I had the initial idea in my head to make it visually appealing, considering the goal was to make an ecommerce for the Company with few products where the brand was in focus. The breadcrumbs througout the page, going from products/bag/checkout, and wishlist/profile/order history.
 
 ### End Design Result:
 
@@ -155,25 +150,19 @@ These three points together form a need to be included.
 Hero:
 ![hero]()
 
-
 Quarrels:
 ![quarrels]()
-
 
 Post Detail:
 ![postdetail]()
 
-
-
 About page:
 ![about]()
-
 
 Footer:
 ![footer]()
 
 Whimsical writings:
-
 
 ### Color Palette
 
@@ -278,8 +267,6 @@ For Python I've used pep8 validator which resulted in 0 errors on all pages.
 
 ## Features Left to Implement
 
-
-
 ## Deployment
 
 The site was deployed using Heroku, following the steps offered by Codeinstitute. Instructions are found [here](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
@@ -287,7 +274,6 @@ The site was deployed using Heroku, following the steps offered by Codeinstitute
 Heroku:
 
 AWS - static:
-
 
 ## Credits
 
