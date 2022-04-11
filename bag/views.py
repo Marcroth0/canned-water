@@ -4,12 +4,16 @@ from django.contrib import messages
 from products.models import Product
 
 def view_bag(request):
-    """A view that renders the bag page"""
+    """
+    A view that renders the bag page
+    """
     
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """
+    Add a quantity of the specified product to the shopping bag
+    """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -27,7 +31,9 @@ def add_to_bag(request, item_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified product to the shopping bag """
+    """
+    Adjust the quantity of the specified product to the shopping bag
+    """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -45,7 +51,9 @@ def adjust_bag(request, item_id):
     return redirect(reverse('view_bag'))
 
 def remove_from_bag(request, item_id):
-    """Delete the item from the shopping bag """
+    """
+    Delete the item from the shopping bag
+    """
 
     try:
         product = get_object_or_404(Product, pk=item_id)

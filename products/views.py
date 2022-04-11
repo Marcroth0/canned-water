@@ -9,7 +9,9 @@ from .models import Product, Category, ProductReview
 from .forms import ProductForm, ReviewForm
 
 def products(request):
-    """ A view to show all products, including sorting and search queries """
+    """
+    A view to show all products, including sorting and search queries
+    """
 
     products = Product.objects.all()
     query = None
@@ -50,7 +52,9 @@ def products(request):
     return render(request, 'products/products.html', context)
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    """
+    A view to show individual product details
+    """
     reviews = ProductReview.objects.filter(product=product_id).order_by("-content")
     product = get_object_or_404(Product, pk=product_id)
 
@@ -88,6 +92,7 @@ def add_review(request, product_id):
 		return redirect("account_login")
 
 def delete_review(request,product_id, review_id):
+
 	if request.user.is_authenticated:
 		product = Product.objects.get(id=product_id)
 		review = ProductReview.objects.get(product=product, id=review_id)
@@ -98,7 +103,9 @@ def delete_review(request,product_id, review_id):
 		return redirect("account_login")
 
 def quick_view(request, product_id):
-    """ A quick view of products """
+    """
+    A quick view of products 
+    """
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -110,7 +117,9 @@ def quick_view(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """ 
+    Add a product to the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not a superuser.')
         return redirect(reverse('home'))
@@ -135,7 +144,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """
+    Edit a product in the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not a superuser.')
         return redirect(reverse('home'))
@@ -164,7 +175,9 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete product from store """
+    """
+    Delete product from store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not a superuser.')
         return redirect(reverse('home'))

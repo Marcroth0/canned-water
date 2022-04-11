@@ -35,30 +35,82 @@ View my User Stories and planning [here](https://github.com/Marcroth0/relationsh
 
 ## Strategy
 
-The initial and primary goal of the website is to create an e-commerce platform that looks great. This is not 100% dedicated to ecommerce, but to the brand itself. Sell the brand, sell the product. It allows a user to 
+The initial and primary goal of the website is to create an e-commerce platform that looks great. This is not 100% dedicated to ecommerce, but to the brand itself. Sell the brand, sell the product. It allows a user to easily navigate the site and interact with the products via reviews, as well as the owners via the contact form. 
 
 Target Audience:
 
 - 18-40 year olds
-- People who are looking to take arguments with a bit of comedy
-- People who would like to improve their communication skills
-- People who've seen too many one-sided-stories
+- People who are tired of plastic
+- People who are environmentally friendly
 
-The audience is looking for something where both sides are visible. With the ability to post both arguments and hash it out once and for all, with complete strangers on the internet, the site allows the user to read different points of views and thereafter see whose argument was the best.
+The visitors are looking for a product that makes caring about the environment cool. 
 
 ## Design/Structure
 
 
-Apps:
+Apps and their core functionality: 
 
+- Checkout 
+Handle successful checkouts and saves order to userprofile,
+Validating checkout process,
+Caches the cart and user data, returns error of unvalid
 
+- Connect
+View to let users send email to owner of site
+
+- Home
+A view to show individual product details through ajax
+A view for index
+
+- Products
+A view to show all products, including sorting and search queries
+A view to show individual product details
+Add/delete user reviews
+add/edit/delete products
+
+- Profiles
+Get and view userprofile including: Get and view order history
+Edit/add/delete Wishlist items. 
+
+- Bag
+A view that renders the bag page
+Add a quantity of the specified product to the shopping bag
+Adjust the quantity of the specified product to the shopping bag
+Delete the item from the shopping bag
+
+- Articles
+Add, edit, and delete Articles/blogs
 
 ### Databases:
 
-Quarrelapp holds all the databases, consisting of:
+### Models: 
 
-1. Post in combination with CommentPost allows for the ability of letting the user create a post, but through a OneToOneField with CommentPost, separate the likes and comments. Through the ability of calling different keys, connected to each argument, it allows for the possibility of cross-liking as well as future customization of the comment section(more on that in improvements) With each post, the model generates the users post but splits the content one and content two into separate keys which are then callable in views.
-2. Comment allows for users to comment on posts with date-stamps, as well as Post, have a built-in CASCADE in order to delete all comments related to user if user decided to delete their account.
+- Articles, Models Post: 
+title: Stores title of article
+author: Stores the author(ForeignKey) taken from User
+description = Stores the description of the Blog tied to user
+image: Imagefield
+body: The content
+date_published: Automatic date_published field
+featured_articles: Boolean field, if true = featured. 
+
+- Bag, Models Order/OrderlineItem:
+Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
+
+- Connect Models:
+email Stores information about used email
+title: Subject of email
+content: Content of email
+
+- Profile: 
+A user profile model for maintaining default
+delivery information(address, email, phone-number, etcetera) and order history
+
+- Review: 
+product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys. 
+content: Stores content of review
+stars: stores the rate
+date_published: Stores when the review was published
 
 Below is a diagram of the correlation between the models:
 

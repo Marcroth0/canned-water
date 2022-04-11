@@ -4,7 +4,9 @@ from django.contrib import messages
 from profiles.models import UserProfile
 
 def contact_us(request):
-    """View to let users send email to owner of site """
+    """
+    View to let users send email to owner of site
+    """
 
     if request.method == "POST":
         form = ContactForm(request.POST)
