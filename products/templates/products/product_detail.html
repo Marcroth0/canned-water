@@ -49,6 +49,7 @@
         <input type="hidden" value="{{ product.id }}" class="prod_id">
         <a class="action-heart AddToWishlist" title="Wishlist" href="#" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a>
         <h1 class="text-light">{{ product.name }}</h1>
+        <p>Product rating:{{ average }}/5</p>
         <hr>
         <p class="text-light">{{ product.description }}</p>
       </div>
@@ -72,7 +73,127 @@
     </div>
   </div>
 </div>
-
+  <!-- <div class="container">
+  <h2 class="text-center">Reviews</h2>
+  <div class="bg-light text-dark">
+    {% for review in reviews %}
+      <div class="notification mb-3">
+        <p class="text-dark">
+          <strong>Date: </strong>{{ review.date_published }},
+          <strong>Rating: </strong>{{ review.stars }}
+        </p>
+        {{ review.content }}
+      </div>
+      <p class="float-right text-dark">By {{ review.user }}</p>
+      {% empty %}
+      <div class="notification mb-3">
+        No reviews yet...
+      </div>
+    {% endfor %}
+  </div>
+  <div class="notification mb-3">
+    {% if request.user.is_authenticated %}
+    <form method="POST" action="{% url 'add_review' product.id %}">
+      {% csrf_token %}
+      <div class="field">
+        <label>Stars</label>
+        <div class="control">
+          <div class="select">
+            <select name="stars">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Content</label>
+        <div class="control">
+          <textarea class="textarea w-100" name="content"></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="btn rounded">Submit</button>
+        </div>
+      </div>
+    </form>
+    {% else %}
+    <p>Please sign in to add a review</p>
+  </div>
+  {% endif %}
+</div>
+</div>
+</div> -->
+<div class="container">
+<div class="row d-flex justify-content-center mt-100 mb-100">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body text-center">
+                <h4 class="card-title text-dark">Reviews</h4>
+            </div>
+            <div class="comment-widgets">
+                <!-- Comment Row -->
+                {% for review in reviews %}
+                <div class="d-flex flex-row comment-row m-t-0">
+                    <div class="comment-text w-100">
+                        <h6 class="font-medium">{{ review.user }}</h6> <span class="m-b-15 d-block">{{ review.content }} </span>
+                        <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span>
+                          <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                          <button type="button" class="btn btn-success btn-sm">Publish</button>
+                          <a href="{% url 'delete_review' product.id review.id %}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <h3>No reviews yet</h3>
+                {% endfor %}
+            </div> 
+        </div>
+    </div>
+</div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-8">
+        {% if request.user.is_authenticated %}
+             <form method="POST" action="{% url 'add_review' product.id %}">
+              {% csrf_token %}
+              <div class="field">
+                <label class="text-light">Stars</label>
+                <div class="control">
+                  <div class="select text-light">
+                    <select name="stars">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="text-light">Content</label>
+                <div class="control">
+                  <textarea class="textarea w-100" name="content"></textarea>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button class="btn rounded float-right mb-3">Submit</button>
+                </div>
+              </div>
+            </form>
+            {% else %}
+            <p>Please sign in to add a review</p>
+          </div>
+          {% endif %}
+      </div>
+    </div>
+</div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

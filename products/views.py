@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
+from django.db.models import Avg
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, ProductReview
+from .forms import ProductForm, ReviewForm
 
 def products(request):
     """ A view to show all products, including sorting and search queries """
@@ -50,14 +51,51 @@ def products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    reviews = ProductReview.objects.filter(product=product_id).order_by("-content")
     product = get_object_or_404(Product, pk=product_id)
+
+    average = reviews.aggregate(Avg("stars"))["stars__avg"]
+    if average == None:
+        average=0
+    else:
+        average = round(average,2)
 
     context = {
         'product': product,
+        'reviews':reviews,
+        'average':average,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+def add_review(request, product_id):
+	if request.user.is_authenticated:
+		product = Product.objects.get(id=product_id)
+		if request.method == "POST":
+			form = ReviewForm(request.POST or None)
+			if form.is_valid():
+				data = form.save(commit=False)
+				data.content = request.POST["content"]
+				data.stars = request.POST["stars"]
+				data.user = request.user
+				data.product = product
+				data.save()
+				return redirect(reverse("product_detail", args=[product_id]))
+		else:
+			form = ReviewForm()
+		return render(request,'product_detail',{'form':form})
+	else:
+		return redirect("account_login")
+
+def delete_review(request,product_id, review_id):
+	if request.user.is_authenticated:
+		product = Product.objects.get(id=product_id)
+		review = ProductReview.objects.get(product=product, id=review_id)
+		if request.user == review.user:
+			review.delete()
+		return redirect(reverse("product_detail", args=[product_id]))
+	else:
+		return redirect("account_login")
 
 def quick_view(request, product_id):
     """ A quick view of products """
