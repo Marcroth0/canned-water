@@ -4,7 +4,7 @@ from .models import UserProfile, WishList
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
 from products.models import Product
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 
 from .forms import UserProfileForm
 
@@ -56,7 +56,9 @@ def profile_account(request):
 
 
 def wish_list(request):
-    wishlist = WishList.objects.filter(user=request.user)
+    user = get_object_or_404(UserProfile, user=request.user)
+    wishlist = WishList.objects.filter(user_wish=user)
+    
 
     template = 'profiles/wish_list.html'
     context = {
@@ -68,18 +70,22 @@ def wish_list(request):
 
 @login_required
 def add_to_wish_list(request, product_id):
+    user = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
-    wish_product = get_object_or_404(WishList, user=request.user.id)
-
-    if product in wish_product.product.all():
-        messages.info(request, "It's already in there")
+    if request.user.is_authenticated:
+        WishList.objects.create(
+            user_wish=user,
+            product=product
+        )
     else:
-        wish_product = WishList.objects.create(user=request.user)
-        wish_product.product.add(product)
-        messages.success(request, "It has been added! ")
-
-
-    return redirect('/')
+        messages.error(request, "Sorry, you're not logged in.")
+        
+    context = {
+        'from_profile': True,
+    }
+    messages.success(
+        request, 'It has been added!')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'), context)
 
 @login_required
 def delete_wishlist_item(request, product_id):
