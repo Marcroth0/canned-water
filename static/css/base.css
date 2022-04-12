@@ -442,6 +442,10 @@ input {
   border-radius: 0;
 }
 
+.form-check-inline .form-check-input {
+  width: 20px;
+  height:20px;
+}
 
 /* Media Queries */
 

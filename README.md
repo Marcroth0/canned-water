@@ -46,67 +46,67 @@ The visitors are looking for a product that makes caring about the environment c
 
 Apps and their core functionality:
 
-- Checkout
-  Handle successful checkouts and saves order to userprofile,
-  Validating checkout process,
-  Caches the cart and user data, returns error of unvalid
+Checkout:
+Handle successful checkouts and saves order to userprofile,
+Validating checkout process,
+Caches the cart and user data, returns error of unvalid
 
-- Connect
-  View to let users send email to owner of site
+Connect:
+View to let users send email to owner of site
 
-- Home
-  A view to show individual product details through ajax
-  A view for index
+Home:
+A view to show individual product details through ajax
+A view for index
 
-- Products
-  A view to show all products, including sorting and search queries
-  A view to show individual product details
-  Add/delete user reviews
-  add/edit/delete products
+Products:
+A view to show all products, including sorting and search queries
+A view to show individual product details
+Add/delete user reviews
+add/edit/delete products
 
-- Profiles
-  Get and view userprofile including: Get and view order history
-  Edit/add/delete Wishlist items.
+Profiles:
+Get and view userprofile including: Get and view order history
+Edit/add/delete Wishlist items.
 
-- Bag
-  A view that renders the bag page
-  Add a quantity of the specified product to the shopping bag
-  Adjust the quantity of the specified product to the shopping bag
-  Delete the item from the shopping bag
+Bag:
+A view that renders the bag page
+Add a quantity of the specified product to the shopping bag
+Adjust the quantity of the specified product to the shopping bag
+Delete the item from the shopping bag
 
-- Articles
+Articles
   Add, edit, and delete Articles/blogs
 
 ### Databases:
 
 ### Models:
 
-- Articles, Models Post:
-  title: Stores title of article
-  author: Stores the author(ForeignKey) taken from User
-  description = Stores the description of the Blog tied to user
-  image: Imagefield
-  body: The content
-  date_published: Automatic date_published field
-  featured_articles: Boolean field, if true = featured.
+Articles, Models Post:
+title: Stores title of article
+author: Stores the author(ForeignKey) taken from User
+description = Stores the description of the Blog tied to user
+image: Imagefield
+body: The content
+date_published: Automatic date_published field
+featured_articles: Boolean field, if true = featured.
 
-- Bag, Models Order/OrderlineItem:
-  Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
+Bag, Models Order/OrderlineItem:
+Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
 
-- Connect Models:
-  email Stores information about used email
-  title: Subject of email
-  content: Content of email
+Connect Models:
+email Stores information about used email
+title: Subject of email
+content: Content of email
 
-- Profile:
-  A user profile model for maintaining default
-  delivery information(address, email, phone-number, etcetera) and order history
+Profile:
+A user profile model for maintaining default
+delivery information(address, email, phone-number, etcetera) and order history
 
-- Review:
-  product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys.
-  content: Stores content of review
-  stars: stores the rate
-  date_published: Stores when the review was published
+Review:
+product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys.
+content: Stores content of review
+stars: stores the rate
+date_published: Stores when the review was published
 
 Below is a diagram of the correlation between the models:
 
@@ -231,7 +231,6 @@ Table outtake:
           "date_published" datetime [not null]
         }
 
-
 ### Planning
 
 I wireframed it using Balsamiq:
@@ -245,44 +244,255 @@ Structure:
 Products Page:
 ![wireframe](readme-files/readme/balsamiq-products-readme.png)
 
-I had the initial idea in my head to make it visually appealing, considering the goal was to make an ecommerce for the Company with few products where the brand was in focus. The breadcrumbs througout the page, going from products/bag/checkout, and wishlist/profile/order history was my tree-branch. 
+I had the initial idea in my head to make it visually appealing, considering the goal was to make an ecommerce for the Company with few products where the brand was in focus. The breadcrumbs througout the page, going from products/bag/checkout, and wishlist/profile/order history was my tree-branch.
 
 ### End Design Result:
 
-Easily navigated navbar containing a home button, disguised as a logo, an about-page, a registration and a login-button that catches the visitors eye.
+Easily navigated navbar which contains(logged in) account management(profile/orders/ability to post a review/see their saved wishlist)
 
 Navbar:
-![navbar]()
 
-For users that are logged in, the post-button swaps to an account button, containing: My posts, deactivate account, delete account, as well as logout. The register button is replaced with an additional post-button.
+![navbar](readme-files/readme/navbar1-readme.png)
 
-Navbar(Logged in):
-![navbar]()
+Navbar(Mobile):
 
-Landing page is a cooperation between the hero-image and the Quarrels-section. Instantly the visitor gets questions answered:
+![navbar](readme-files/readme/navbar-mobile-readme.png)
+
+Landing page is a cooperation between the hero-image and the words changing between "Hydrate for: PLASTIC-HATE, CLIMATE, YOU, MATE". Instantly the visitor gets questions answered:
 
 1. What the point of the site is
-2. The possibility of being a part of it
-3. How the posts are portrayed on the landing page
+2. Laughing at "you, mate"
+3. That it is a brand for caffeinated water and it's environmentally friendly
 
 These three points together form a need to be included.
 
 Hero:
-![hero]()
+The Hero image, as mentioned above, is 
 
-Quarrels:
-![quarrels]()
+<details><summary>Hero Image</summary>
 
-Post Detail:
-![postdetail]()
+![hero](readme-files/readme/landing-page-readme.png)
 
-About page:
-![about]()
+</details>
+<br>
+Hero - Mobile:
+<details><summary>Hhero Image(mobile)</summary>
 
-Footer:
-![footer]()
+![hero-mobile](readme-files/readme/landing-page-phone-readme.png)
 
-Whimsical writings:
+</details>
+<br>
+
+Just water: Portraying the message instantly, claiming the company is looking after the environment. Setting up the theme instantly. 
+
+<details><summary>Just f*uc*ing water</summary>
+
+![just-water](readme-files/readme/just-water-readme.png)
+
+</details>
+
+<details><summary>Just f*uc*ing water(mobile)</summary>
+
+![just-water](readme-files/readme/just-water-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary></summary>
+
+![]()
+
+</details>
+<br>
+
+Featured products:
+The owner has the ability of portraying featured products that will show up on the front page. You're able to set as many featured to True, however the recommendation is to keep it at 4. To leave the possibility open, I decided to keep that functionality out. 
+
+<details><summary>Featured Products</summary>
+
+![just-water](readme-files/readme/featured-products-readme.png)
+
+</details>
+
+<details><summary>Featured Products(mobile)</summary>
+
+![just-water](readme-files/readme/featured-products-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Quick view</summary>
+
+![quick-view](readme-files/readme/quick-view-readme.png)
+
+</details>
+<br>
+
+Featured Articles:
+The same functionality goes with the articles. Either you set featured to True, which will make them end up in the index.html, or you keep it in the "View all articles" template.
+
+<details><summary>Featured Articles</summary>
+
+![featured-articles](readme-files/readme/featured-articles-readme.png)
+
+</details>
+<br>
+
+<details><summary>Featured Articles(mobile)</summary>
+
+![featured-articles-mobile](readme-files/readme/featured-articles-readme-mobile.png)
+
+</details>
+<br>
+
+Footer: 
+Footer is simple, but effective. Giving the the core functionality in links: Home, Contact, Profile, Products, Articles
+As well as links to social media sites. I left out the side to let the moving background keep flowing. 
+
+<details><summary>Footer</summary>
+
+![footer](readme-files/readme/footer1-readme.png)
+
+</details>
+<br>
+
+<details><summary>Footer(mobile)</summary>
+
+![footer-mobile](readme-files/readme/footer1-mobile-readme.png)
+
+</details>
+<br>
+
+## Products
+
+Product page: 
+A fully reponsive page, which menu-bar narrows to be compatible with all mobiles. In case more products are added I added the functionality of an additional menu-bar activated on scroll. 
+
+
+<details><summary>Products</summary>
+
+![products](readme-files/readme/products-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Products(mobile)</summary>
+
+![products-mobile](readme-files/readme/products1-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Products(scroll)</summary>
+
+![scroll-bar](readme-files/readme/products-scroll-readme.png)
+
+</details>
+<br>
+
+## Product Details
+
+Product details:
+The user finds every necessary information about the product: Price, description, name, image, ability to att to wishlist, increment/decrement between how many to purchase and of course add to bag. As well as (if authenticated) post a review with a rating between 1.5 which will be automatically averaged and applied to the top. 
+
+
+<details><summary>Products Details</summary>
+
+![product-details1](readme-files/readme/product-details-readme.png)
+
+</details>
+<br>
+
+<details><summary>Products Details(mobile(1))</summary>
+
+![product-details2](readme-files/readme/product-details-top-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Products Details(mobile(2))</summary>
+
+![product-details3](readme-files/readme/product-details-middle-mobile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Products Details(mobile(3))</summary>
+
+![product-details4](readme-files/readme/product-details-bottom-mobile-readme.png)
+
+</details>
+<br>
+
+## Checkout 
+
+Bag: 
+The user, after adding a product, will find it in their bag. Here, as well, being able to increment/decrement before moving to Checkout, which they can do either through the breadcrumb up top or via "Secure Checkout"
+
+<details><summary>Bag </summary>
+
+![bag](readme-files/readme/bag-readme.png)
+
+</details>
+<br>
+
+<details><summary>Bag(mobile)</summary>
+
+![bag-mobile](readme-files/readme/product-details-bottom-mobile-readme.png)
+
+</details>
+<br>
+
+Checkout: 
+
+<details><summary>Checkout</summary>
+
+![checkout](readme-files/readme/checkout-readme.png)
+
+</details>
+<br>
+
+<details><summary>Checkout(mobile(1))</summary>
+
+![checkout-mobile1](readme-files/readme/checkout-mobile-top-readme.png)
+
+</details>
+<br>
+
+<details><summary>Checkout(mobile(2))</summary>
+
+![checkout-mobile1](readme-files/readme/checkout-bottom-mobile-readme.png)
+
+</details>
+<br>
+
+Checkout Success: 
+
+
+<details><summary>Checkout Success</summary>
+
+![checkout-success](readme-files/readme/checkout-success-readme.png)
+
+</details>
+<br>
+
+<details><summary>Checkout Success(mobile(1))</summary>
+
+![checkout-success1](readme-files/readme/checkout-mobile-top-readme.png)
+
+</details>
+<br>
+
+<details><summary>Checkout Success(mobile(1))</summary>
+
+![checkout-success2](readme-files/readme/checkout-bottom-mobile-readme.png)
+
+</details>
+<br>
+
+## Profile
+
+
 
 ### Color Palette
 

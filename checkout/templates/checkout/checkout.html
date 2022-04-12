@@ -131,19 +131,6 @@ Checkout
                                                                 <p class="my-0"> ${{ item.product.price  }}</p>
                                                             </td>
                                                             <td class="py-3 w-25">
-                                                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                                                    {% csrf_token %}
-                                                                    <div class="input-group mr-auto d-flex align-items-center">
-                                                                        <div class="col-sm d-flex quantity justify-content-center text-center m-2">
-                                                                            <button class="minus bg-light btn btn-sm decrement-qty" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">-</button>
-                                                                            <input class="count qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                                                            <button class="increment-qty btn btn-sm plus bg-light" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">+</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                                <a class="update-link text-info"><small>Update</small></a>
-                                                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
-                                                            </td>
                                                             <td class="py-3">
                                                                 <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity  }}</p>
                                                             </td>
