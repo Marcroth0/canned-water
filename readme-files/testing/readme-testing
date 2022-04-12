@@ -121,4 +121,17 @@ As a superUser I have the ability to via the frontend edit, add, delete, these f
 ![testing10](/readme-files/readme/testing-profile-readme.png)
 ![testing11](/readme-files/readme/testing-superuser-readme.png)
 
+## Validators
+
+My Python code has ran through pep8 and is deemed "All right"
+My Html-code has ran through wc3 validator and has received no errors. 
+W3 CSS Validator came back appproved. 
+
+# Lighthouse
+
+## Unfixed Bugs
+
+1. Through Ajax Code I was able to cause the quickview to gather the product details of my featured products on the index.html. However, sometimes, the footer loses its position(even though I've added code to constantly pushes it down no matter what) However, considering the model "freezes" whatever is behind it it manages to sneak up. I have no solution for it right now, but deemed the function to be cool enough to let it be there. 
+2. Between width 885 and width 767 the account-button and bag overlap. Sometimes my fix works, which was to override the bootstrap class of navbar-expand-md. However, sometimes it still happens and I caught it too late to look further into it. Easily fixed whenever the above mentioned css override will work.
+
 

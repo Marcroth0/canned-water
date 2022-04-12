@@ -2,18 +2,18 @@
 
 ![amiresponsive]()
 
+## About:
+<hr>
+
 Welcome to Dropp. Website! Dropp is an ecommerce platform, equipped with authentication (user-accounts) that not only sells its brand but also sells their products and merchandise. All using HTML, CSS(bootstrap), Javascript(jQuery), Python, Django, and deployment to Heroku with AWS holding the reigns of static files. Not to mention Stripe, the payment system integrated.
 
-Live link: https://quarrel2022.herokuapp.com/
-
-## About:
+Live link: https://canned-water.herokuapp.com/
 
 ### Table of Contents
 
-1. [User Stories](#user-stories)
-2. [UX](#ux)
+1. [UX](#ux)
    1. [Strategy](#strategy)
-   2. [Design/Structure](#design/structure)
+   2. [Design/Structure](#structure)
    3. [Databases](#databases)
    4. [Planning](#planning)
    5. [End Design](#end-design-result)
@@ -42,71 +42,71 @@ Target Audience:
 
 The visitors are looking for a product that makes caring about the environment cool.
 
-## Design/Structure
+## Structure
 
 Apps and their core functionality:
 
-Checkout:
-Handle successful checkouts and saves order to userprofile,
-Validating checkout process,
-Caches the cart and user data, returns error of unvalid
+Checkout:<br>
+Handle successful checkouts and saves order to userprofile,<br>
+Validating checkout process,<br>
+Caches the cart and user data, returns error of unvalid<br>
 
-Connect:
+Connect:<br>
 View to let users send email to owner of site
 
-Home:
-A view to show individual product details through ajax
-A view for index
+Home:<br>
+A view to show individual product details through ajax<br>
+A view for index<br>
 
-Products:
-A view to show all products, including sorting and search queries
-A view to show individual product details
-Add/delete user reviews
-add/edit/delete products
+Products:<br>
+A view to show all products, including sorting and search queries<br>
+A view to show individual product details<br>
+Add/delete user reviews<br>
+add/edit/delete products<br>
 
-Profiles:
-Get and view userprofile including: Get and view order history
-Edit/add/delete Wishlist items.
+Profiles:<br>
+Get and view userprofile including: Get and view order history<br>
+Edit/add/delete Wishlist items.<br>
 
-Bag:
-A view that renders the bag page
-Add a quantity of the specified product to the shopping bag
-Adjust the quantity of the specified product to the shopping bag
-Delete the item from the shopping bag
+Bag:<br>
+A view that renders the bag page<br>
+Add a quantity of the specified product to the shopping bag<br>
+Adjust the quantity of the specified product to the shopping bag<br>
+Delete the item from the shopping bag<br>
 
-Articles
-  Add, edit, and delete Articles/blogs
+Articles<br>
+  Add, edit, and delete Articles/blogs<br>
 
 ### Databases:
 
 ### Models:
 
-Articles, Models Post:
-title: Stores title of article
-author: Stores the author(ForeignKey) taken from User
-description = Stores the description of the Blog tied to user
-image: Imagefield
-body: The content
-date_published: Automatic date_published field
-featured_articles: Boolean field, if true = featured.
+Articles, Models Post:<br>
+title: Stores title of article<br>
+author: Stores the author(ForeignKey) taken from User<br>
+description = Stores the description of the Blog tied to user<br>
+image: Imagefield<br>
+body: The content<br>
+date_published: Automatic date_published field<br>
+featured_articles: Boolean field, if true = featured.<br>
 
-Bag, Models Order/OrderlineItem:
-Stores all information about the order. The user information, such as address, email, phone number, address etcetera - order information including price + delivery, products and quantity, and a stripe_pid intent ID - ties all information to the user_profile.
+Bag, Models Order/OrderlineItem:<br>
+Stores all information about the order. The user information, such as address, email, phone number,<br> address etcetera - order information including price + delivery, products and quantity, and a <br>stripe_pid intent ID - ties all information to the user_profile.
 
-Connect Models:
-email Stores information about used email
-title: Subject of email
-content: Content of email
+Connect Models:<br>
+email Stores information about used email<br>
+title: Subject of email<br>
+content: Content of email<br>
 
-Profile:
-A user profile model for maintaining default
-delivery information(address, email, phone-number, etcetera) and order history
+Profile:<br>
+A user profile model for maintaining default<br>
+delivery information(address, email, phone-number, etcetera) and order history<br>
 
-Review:
-product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys.
-content: Stores content of review
-stars: stores the rate
-date_published: Stores when the review was published
+Review:<br>
+product: Stores the product with the related name of 'reviews', connected to user - both in foreignkeys.<br>
+content: Stores content of review<br>
+stars: stores the rate<br>
+date_published: Stores when the review was published<br>
 
 Below is a diagram of the correlation between the models:
 
@@ -536,9 +536,8 @@ The design of the website was crucial. It being an ecommerce site with all its f
 ### Fonts
 
 font-family: 'Montserrat', sans-serif;
+<br>
 For index.html: font-family: "Codystar", cursive;
-
-
 
 ## User abilities
 
@@ -553,61 +552,22 @@ Superuser(owner):
 
 ## Testing
 
-See further [here](readme-files/testing/readme-testing)
+See further thorough [here](readme-files/testing/readme-testing)
 
-I tested the responsiveness of the site on the below units, using chrome dev as well as some in real life testing:
+I tested the responsiveness of the site on the devices currently offered by chrome Devtools, as well as on a MacBook Pro 13", and Macbook Pro 14", and a iMac 27". Cellphones tried are iPhone 12.
 
-**Mobile**
 
-- Moto G4 (360x640)
-- Galaxy S5 (360x640)
-- Pixel 2 (411x731)
-- Pixel 2 XL (411x823)
-- iPhone 5/SE (320x568)
-- iPhone 6/7/8 (375x667)
-- iPhone 6/7/8 Plus (414x736)
-- iPhone X (375x812)
-- iPad (768x1024)
-- iPad Pro (1024x1366)
-
-**Browsers:**
-
-- Chrome
-- Mozilla Firefox
-- Safari
-
-### Manual testing
-
-See further on click [here]()
-
-### Lighthouse
-
-![lighthouse]()
-
-### Validator Testing
-
-W3 HTML Validator:
-
-![html]()
-
-W3 CSS Validator:
-
-![css]()
-
-For Python I've used pep8 validator which resulted in 0 errors on all pages.
-
-## Unfixed Bugs
-
-1. There's a bug where if you type one very, very long word, without spaces, in argument one or two, the post_details overflows.
-2. CommentPost (content one and two) aren't successfully deleted from DB. Have to add functionality in already existing delete-function to also include this.
 
 ## Technologies used:
 
 - I used [Python](https://www.python.org/) to write my functions and models
+- I used [jQuery](https://jquery.com/) to write front-end functions
+- I used [Javascript](https://www.javascript.com/) to write front-end functions
+- I used [Ajax](https://www.w3schools.com/js/js_ajax_intro.asp)
 
 - [Django](https://www.djangoproject.com/) is the framework used to build project and its apps
 
-- [Cloudinary](https://cloudinary.com/) has been used to store my images and static files
+- [AWS](https://cloudinary.com/) has been used to store my images and static files
 
 - [Crispyforms](https://django-crispy-forms.readthedocs.io/en/latest/) has been used to easily display forms
 
@@ -635,14 +595,16 @@ For Python I've used pep8 validator which resulted in 0 errors on all pages.
 
 ## Deployment
 
-The site was deployed using Heroku, following the steps offered by Codeinstitute. Instructions are found [here](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+Deploying to Heroku: 
 
-Heroku:
 
-AWS - static:
+AWS - static: 
 
 ## Credits
 
-- A general shout-out to [StackOverflow](https://stackoverflow.com/), which solved a lot of issues.
-- Credit for images used in posts [chikenbugagashenka](https://www.freepik.com/free-vector/boys-girls-kids-aggression-conflict-set_20892288.htm#query=argue&position=11&from_view=search)
-- [dbdiagram](https://dbdiagram.io/) for offering a database-visualiser
+- A general shout-out to [StackOverflow](https://stackoverflow.com/), which solved a lot of issues and gave a lot of answers. Always a key website for inspiration and working code. 
+- Credit for images used in posts [chikenbugagashenka]
+- Credit to this fellow gentlemen which automated code I took great inspiration from [here](https://github.com/BrianWhelanDublin/milestone-project-4)
+- Credit to [Freefrontend](https://freefrontend.com/) from which I took inspiration from when it came to the Sidebar as well as 
+
+- [dbdiagram](https://dbdiagram.io/) for offering a database-visualiser.
