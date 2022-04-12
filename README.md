@@ -1,6 +1,6 @@
 # canned-water
 
-![amiresponsive]()
+![amiresponsive](readme-files/readme/amiresponsive-dropp-readme.png)
 
 ## About:
 <hr>
@@ -18,15 +18,13 @@ Live link: https://canned-water.herokuapp.com/
    4. [Planning](#planning)
    5. [End Design](#end-design-result)
 3. [Testing](#testing)
-   1. [Manual Testing](#manual-testing)
-   2. [Validator](#validator-testing)
-   3. [Bugs](#unfixed-bugs)
-   4. [Improvements](#improvements)
+   1. [Improvements](#improvements)
+4. [Deployment](#deployment)
 4. [Credits](#credits)
 
 ### User Stories
 
-View my User Stories and planning [here](https://github.com/Marcroth0/relationship-quarrel/issues).
+View my User Stories and planning [here](https://github.com/Marcroth0/canned-water/projects/1)
 
 # UX
 
@@ -533,6 +531,8 @@ Colors:
 
 The design of the website was crucial. It being an ecommerce site with all its functionality, it was still leaning towards its branding. Being cool, but environmentally friendly. 
 
+Considering the website is to first and foremost market the brand - the necessary performance one usually requires in an all-out e-commerce website wasn't necessary here. The heavy svg-files flowing in the background adds to the feeling of the brand, thus being more important than 100% performance. 
+
 ### Fonts
 
 font-family: 'Montserrat', sans-serif;
@@ -550,13 +550,21 @@ User, logged in:
 Superuser(owner):
 - Above abilities. In addition: Through the front end create, edit, and delete: Articles, Products, adding both images as well as whether they should be featured or not. 
 
+## Agile
+
+This project has been following the Agile guidelines. Pleasee read further here about my process: 
+ [here](https://github.com/Marcroth0/canned-water/projects/1)
+
 ## Testing
 
 See further thorough [here](readme-files/testing/readme-testing)
 
 I tested the responsiveness of the site on the devices currently offered by chrome Devtools, as well as on a MacBook Pro 13", and Macbook Pro 14", and a iMac 27". Cellphones tried are iPhone 12.
 
+## Improvements
 
+- Allow for users to set up a monthly subscription of the products. 
+- Make website less heavy with more compressed files. 
 
 ## Technologies used:
 
@@ -590,8 +598,6 @@ I tested the responsiveness of the site on the devices currently offered by chro
 - [Bootstrap4](https://getbootstrap.com/) - css library
 
 - [AmIResponsive](http://ami.responsivedesign.is/#) - used to check responsiveness, and collect image you find at the top of page.
-
-## Features Left to Implement
 
 ## Deployment
 
@@ -814,8 +820,10 @@ Connecting to AWS:
 ## Credits
 
 - A general shout-out to [StackOverflow](https://stackoverflow.com/), which solved a lot of issues and gave a lot of answers. Always a key website for inspiration and working code. 
-- Credit for images used in posts [chikenbugagashenka]
+- Credit for images used in posts goes to Unsplash. 
 - Credit to this fellow gentlemen which automated code I took great inspiration from [here](https://github.com/BrianWhelanDublin/milestone-project-4)
-- Credit to [Freefrontend](https://freefrontend.com/) from which I took inspiration from when it came to the Sidebar as well as 
+- Credit to [Freefrontend](https://freefrontend.com/) from which I took inspiration from when it came to the Sidebar as well as the jumbotron text animation. 
+- Images are custom made. 
+- Animations are from loading.io [loading.io](https://loading.io/)
 
 - [dbdiagram](https://dbdiagram.io/) for offering a database-visualiser.

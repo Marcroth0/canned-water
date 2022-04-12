@@ -129,6 +129,8 @@ W3 CSS Validator came back appproved.
 
 # Lighthouse
 
+Lighthouse returned high in Best Practices, as well as SEO. However, performance is lacking which was anticipated. Due to the brand being in the light I deemed it to be worth it. The SVG-files are heavy, but sell the brand, sell the product. 
+
 ## Unfixed Bugs
 
 1. Through Ajax Code I was able to cause the quickview to gather the product details of my featured products on the index.html. However, sometimes, the footer loses its position(even though I've added code to constantly pushes it down no matter what) However, considering the model "freezes" whatever is behind it it manages to sneak up. I have no solution for it right now, but deemed the function to be cool enough to let it be there. 
