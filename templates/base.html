@@ -45,7 +45,7 @@
   <body>
     <header>
         <div class="container-fluid fixed-top navbar-opacity">
-            <nav class="navbar navbar-expand-lg navbar-dark" id="barnav">
+            <nav class="navbar navbar-expand-md navbar-dark" id="barnav">
                 <button class="btn btn-link d-block d-md-none" id="sidebarCollapse" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -114,16 +114,13 @@
                                     My Account
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="{% url 'profile' %}">My Orders</a>
+                                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                                     <div class="dropdown-divider"></div>
                                     {% if request.user.is_superuser %}
                                         <a class="dropdown-item" href="{% url 'add_product' %}"
                                         >Add product</a
                                         >
                                     {% endif %}
-                                    <a class="dropdown-item" href="#"
-                                        >Delete Account</a
-                                    >
                                     <a class="dropdown-item" href="{% url 'account_logout' %}"
                                         >Logout</a
                                     >
@@ -156,16 +153,13 @@
                                 My Account
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="{% url 'profile' %}">My Orders</a>x
+                                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 {% if request.user.is_superuser %}
                                     <a class="dropdown-item" href="{% url 'add_product' %}"
                                         >Add product</a
                                     >
                                 {% endif %}
-                                    <a class="dropdown-item" href="#"
-                                        >Delete Account</a
-                                    >
                                     <a class="dropdown-item" href="{% url 'account_logout' %}"
                                         >Logout</a
                                     >
@@ -187,26 +181,20 @@
 
             <ul class="list-unstyled components links">
                 <li>
-                <a href="#"><i class="fa-solid fa-circle-info mr-2"></i> About</a>
-                </li>
-                <li>
                 <a href="{% url 'products' %}"><i class="fa-solid fa-glass-water-droplet mr-2"></i> Products</a>
                 </li>
                 <li>
-                <a href="#"><i class=""></i> Contact</a>
-                </li>
-                <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class=""></i>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-user-tie"></i>
                                 Account</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                    <a href="#">Profile</a>
+                    <a href="{% url 'profile' %}">Profile</a>
                     </li>
                     <li>
-                    <a href="#">Privacy Policy</a>
+                    <a href="{% url 'profile_account' %}">Surprise</a>
                     </li>
                     <li>
-                    <a href="#">Terms & Conditions</a>
+                    <a href="{% url 'wish_list' %}">Wishlist</a>
                     </li>
                 </ul>
                 </li>
@@ -215,7 +203,7 @@
                 </li>
             </ul>
 
-            <h6 class="text-uppercase mb-1">Categories</h6>
+            <h6 class="text-uppercase mb-1 text-light">Categories</h6>
             <ul class="list-unstyled components mb-3">
                 <li>
                 <a href="{% url 'products' %}?category=product_water">Water</a>

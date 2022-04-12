@@ -518,19 +518,20 @@ Entire profile is navigated through breadcrumbs, showing Wishlist/Surprise/Profi
 
 <details><summary>Wishlist</summary>
 
-![wishlist](readme-files/readme/profile-wishlist-readme.png)
+![wishlist](readme-files/readme/sidebar-readme.png)
 
 </details>
 <br>
 
+
 ### Color Palette
 
 Colors:
-![palette]()
+![palette](readme-files/readme/color-palette-readme.png)
 
 ### Reasoning
 
-The design of the website was crucial. It being a "argument-solver" it needed to be peculiar and not take the initial argument, or the definition of an argument, all that seriously. With the ability of seeing it, instead of an obstacle, as a "funny challenge" to post it to the internet. Hence the sarcastic comments spread around the website. With a comical twist, on serious subjects, it will hopefully invoke a funny tone in the comments as well as an appearance of the "good side" of the internet which are there to actually help, inbetween a sea of funny anti-comments. (Comments mainly meant to ridicule)
+The design of the website was crucial. It being an ecommerce site with all its functionality, it was still leaning towards its branding. Being cool, but environmentally friendly. 
 
 ### Fonts
 
