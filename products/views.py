@@ -41,9 +41,9 @@ def products(request):
                 return redirect(reverse("product"))
 
             queries = (
-                Q(name__icontains=query)
-                | Q(description__icontains=query)
-                | Q(category__name__icontains=query)
+                Q(name__icontains=query) |
+                Q(description__icontains=query) |
+                Q(category__name__icontains=query)
             )
             products = products.filter(queries)
 
