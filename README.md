@@ -825,5 +825,6 @@ Connecting to AWS:
 - Credit to [Freefrontend](https://freefrontend.com/) from which I took inspiration from when it came to the Sidebar as well as the jumbotron text animation. 
 - Images are custom made. 
 - Animations are from loading.io [loading.io](https://loading.io/)
+- A special thank you to Code Institute, which base this project is from CodeInstitute
 
 - [dbdiagram](https://dbdiagram.io/) for offering a database-visualiser.
