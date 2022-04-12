@@ -13,16 +13,16 @@ All Products
 
 <div class="load-spinner"></div>
 <div class="row mt-100 d-flex products-bar justify-content-center align-items-center shadow mb-3">
-    <div class="col-2 text-center color-toggle shadow m-1 pt-1 pb-1">
+    <div class="col-2 text-center shadow m-1 pt-1 pb-1">
         <a href="{% url 'products' %}" class="text-light">All</a>
     </div>
-    <div class="col-2 text-center color-toggle shadow m-1 pt-1 pb-1">
+    <div class="col-2 text-center shadow m-1 pt-1 pb-1">
         <a href="{% url 'products' %}?category=product_water" class="text-light">Water</a>
     </div>
-    <div class="col-2 text-center color-toggle shadow m-1 pt-1 pb-1">
+    <div class="col-2 text-center shadow m-1 pt-1 pb-1">
         <a href="{% url 'products' %}?category=product_bags" class="text-light">Bags</a>
     </div>
-    <div class="col-2 text-center color-toggle shadow m-1 pt-1 pb-1">
+    <div class="col-2 text-center shadow m-1 pt-1 pb-1">
         <a href="{% url 'products' %}?category=product_hats" class="text-light">Hats</a>
     </div>
 </div>
@@ -42,9 +42,7 @@ All Products
     <div class="container d-flex justify-content-center mt-100 background-blur">
         <div class="row">
             {% for product in products %}
-                <div class="col-md-3 col-sm-4 product_data">
-                    {% csrf_token %}
-                    <input type="hidden" value="{{ product.id }}" class="prod_id">
+                <div class="col-md-3 col-sm-4">
                     <div class="product-wrapper mb-45 text-center">
                         <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
                             <div class="product-action">
@@ -76,13 +74,6 @@ All Products
         }
         });
     });
-    
-    // $(".color-toggle").click(function () {
-    //     if(!$(this).hasClass('product-orange')) {
-    //         $(".color-toggle").removeClass("product-orange");
-    //         $(this).addClass("product-orange");
-    //     }
-    // });
 </script>
 {% endblock %}
 

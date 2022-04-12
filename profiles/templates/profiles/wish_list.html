@@ -41,7 +41,7 @@ Wish List
                                     <div class="card-body wishdata">
                                         {% if wishlist %}
                                             {% for product in wishlist %}
-                                                <div class="row product_data">
+                                                <div class="row">
                                                     <div class="col-md-2 my-auto">
                                                         <a href=""><img src="{{ product.product.image.url }}" class="img-fluid" alt="Product Image"></a>
                                                     </div>
@@ -52,8 +52,6 @@ Wish List
                                                         <h6>${{ product.product.price }}</h6>
                                                     </div>
                                                     <div class="col-md-3 my-auto padding-mobile">
-                                                        {% csrf_token %}
-                                                        <input type="hidden" class="prod_id" value="{{ product.id }}">
                                                         <a href="{% url 'product_detail' product.product.id %}"><button class="btn rounded text-light shadow">Product</button></a>
                                                     </div>
                                                     <div class="col-md-2 my-auto">
