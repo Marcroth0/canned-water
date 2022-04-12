@@ -49,6 +49,7 @@
         <input type="hidden" value="{{ product.id }}" class="prod_id">
         <h1 class="text-light">{{ product.name }}</h1>
         <p>Product rating:{{ average }}/5</p>
+        <p>Price: ${{ product.price}}</p>
         <hr>
         <p class="text-light">{{ product.description }}</p>
       </div>
@@ -89,7 +90,7 @@
                     <div class="comment-text w-100">
                         <h6 class="font-medium">{{ review.user }}</h6> <span class="m-b-15 d-block">{{ review.content }} </span>
                         <div class="comment-footer"> <span class="text-muted float-right">{{ review.date_published }}, Rating: {{ review.stars }}/5 </span>
-                          {% if request.user == review.user or request.user == superuser %}
+                          {% if request.user == review.user or request.user.is_superuser %}
                           <a href="{% url 'delete_review' product.id review.id %}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
                           {% endif %}
                         </div>

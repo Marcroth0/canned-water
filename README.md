@@ -535,19 +535,25 @@ The design of the website was crucial. It being an ecommerce site with all its f
 
 ### Fonts
 
-Font-family: "Mochiy Pop P One", Montserrat;
+font-family: 'Montserrat', sans-serif;
+For index.html: font-family: "Codystar", cursive;
 
-##
 
-## CRUD
 
-- The user has the ability to
-  C - reate their own post.
-  R - read their, or others posts and comments.
-  U - update their post
-  D - delete their post and comments, as well as their account.
+## User abilities
+
+User, not logged in:
+- View products, articles
+
+User, logged in: 
+- Access to Profile including Wishlist, ability to save delivery-information, ability to leave reviews.
+
+Superuser(owner):
+- Above abilities. In addition: Through the front end create, edit, and delete: Articles, Products, adding both images as well as whether they should be featured or not. 
 
 ## Testing
+
+See further [here](readme-files/testing/readme-testing)
 
 I tested the responsiveness of the site on the below units, using chrome dev as well as some in real life testing:
 
