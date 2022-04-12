@@ -1,0 +1,7 @@
+@media only screen and (max-device-width: 400px) {
+
+    .padding-mobile {
+        padding-bottom: 10px;
+    }
+        
+}

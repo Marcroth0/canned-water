@@ -492,7 +492,36 @@ Checkout Success:
 
 ## Profile
 
+Profile:
+Entire profile is navigated through breadcrumbs, showing Wishlist/Surprise/Profile. Profile containing valuable information such as address and information(saved from checkout). Surprise contains, well, a surprise; a continuing joke. Wishlist contains each item the user has saved to their account. 
 
+<details><summary>Profile</summary>
+
+![profile](readme-files/readme/profile-readme.png)
+
+</details>
+<br>
+
+<details><summary>Surprise</summary>
+
+![profile-surprise](readme-files/readme/profile-surprise-readme.png)
+
+</details>
+<br>
+
+<details><summary>Surprise 2</summary>
+
+![profile-surprise-show](readme-files/readme/profile-surprise-show-readme.png)
+
+</details>
+<br>
+
+<details><summary>Wishlist</summary>
+
+![wishlist](readme-files/readme/profile-wishlist-readme.png)
+
+</details>
+<br>
 
 ### Color Palette
 

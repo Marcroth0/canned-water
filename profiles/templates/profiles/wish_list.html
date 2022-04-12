@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'profiles/css/wish_list.css' %}">
 {% endblock %}
 
 {% block extra_title %}
@@ -26,7 +26,7 @@ Wish List
                                     <nav aria-label="breadcrumb">
                                         <ol class="list-unstyled breadcrumb justify-content-center">
                                             <li class="text-secondary breadcrumb-item font-weight-bold "><a class="active-class" aria-current="page" href="#"><span class="">Wishlist</span></a></li>
-                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_account' %}"><span class="">Handle Account</span></a></li>
+                                            <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile_account' %}"><span class="">A Message</span></a></li>
                                             <li class="text-secondary breadcrumb-item font-weight-bold"><a class="text-light" href="{% url 'profile' %}"><span class="">Profile</span></a></li>
                                         </ol>
                                     </nav>
@@ -51,7 +51,7 @@ Wish List
                                                     <div class="col-md-2 my-auto">
                                                         <h6>${{ product.product.price }}</h6>
                                                     </div>
-                                                    <div class="col-md-3 my-auto">
+                                                    <div class="col-md-3 my-auto padding-mobile">
                                                         {% csrf_token %}
                                                         <input type="hidden" class="prod_id" value="{{ product.id }}">
                                                         <a href="{% url 'product_detail' product.product.id %}"><button class="btn rounded text-light shadow">Product</button></a>
