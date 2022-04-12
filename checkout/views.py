@@ -100,7 +100,7 @@ def checkout(request):
                     messages.error(
                         request,
                         (
-                            "One of the products in your bag wasn't found in our database. "
+                            "One of the products in your bag wasn't found."
                             "Please call us for assistance!"
                         ),
                     )
@@ -120,7 +120,7 @@ def checkout(request):
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your bag")
             return redirect(reverse("products"))
 
         current_bag = bag_contents(request)

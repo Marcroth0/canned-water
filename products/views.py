@@ -40,7 +40,11 @@ def products(request):
                 messages.error(request, "Enter something, mate")
                 return redirect(reverse("product"))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query)
+                | Q(description__icontains=query)
+                | Q(category__name__icontains=query)
+            )
             products = products.filter(queries)
 
     context = {
@@ -62,7 +66,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     average = reviews.aggregate(Avg("stars"))["stars__avg"]
-    if average == None:
+    if average is None:
         average = 0
     else:
         average = round(average, 2)
@@ -106,20 +110,6 @@ def delete_review(request, product_id, review_id):
         return redirect(reverse("product_detail", args=[product_id]))
     else:
         return redirect("account_login")
-
-
-def quick_view(request, product_id):
-    """
-    A quick view of products
-    """
-
-    product = get_object_or_404(Product, pk=product_id)
-
-    context = {
-        "product": product,
-    }
-
-    return render(request, "products/quick_view.html", context)
 
 
 @login_required

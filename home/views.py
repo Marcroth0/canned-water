@@ -2,10 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
 from articles.models import Post
 
-##temp
-from django.contrib import messages
-from profiles.models import WishList
-
 
 def index(request):
     """
