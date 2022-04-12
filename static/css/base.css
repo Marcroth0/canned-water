@@ -98,6 +98,7 @@ i {
   padding: 0 1rem;
 }
 
+/* Sidebar */
 #sidebar {
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
@@ -338,6 +339,8 @@ i {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+/* Qty */
+
 .quantity .minus {
   background-color: #fff;
   color: black;
@@ -521,6 +524,7 @@ td img {
   background: transparent !important;
 }
 
+/* Spinner */
 .load-spinner {
   position: fixed;
   display: flex;
@@ -564,11 +568,6 @@ td img {
   background-repeat: no-repeat;
 }
 
-.form-control:focus {
-  border-color: #e1640d !important;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
-}
-
 .overlay-animated {
   height: 100%;
   width: 100%;
@@ -580,6 +579,11 @@ td img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.form-control:focus {
+  border-color: #e1640d !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
 }
 
 /* Footer */
@@ -611,6 +615,7 @@ footer {
   color: #e1640d;
 }
 
+/* Logo */
 .dot {
   color: #e1640d;
 }
