@@ -18,4 +18,34 @@ th,
   color: #000 !important;
 }
 
+@media only screen and (max-device-width: 400px) {
+
+  .card-body {
+    padding-left:0;
+    padding-right:0;
+  }
+
+    .card-body .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  .row .col-md-7 {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .tbody .tr .td {
+        padding-left:0;
+        padding-right:0;
+  }
+  .img-gone {
+    display:none;
+  }
+
+  .mobile-left {
+    float:left;
+  }
+}
+
 
