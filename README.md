@@ -110,7 +110,127 @@ Apps and their core functionality:
 
 Below is a diagram of the correlation between the models:
 
-![database-schema]()
+![database-schema](readme-files/readme/database-schema-readme.png)
+
+Table outtake:
+
+        Table "auth_user" {
+          "id" integer [pk, not null]
+          "password" varchar(128) [not null]
+          "last_login" datetime
+          "is_superuser" bool [not null]
+          "username" varchar(150) [unique, not null]
+          "last_name" varchar(150) [not null]
+          "email" varchar(254) [not null]
+          "is_staff" bool [not null]
+          "is_active" bool [not null]
+          "date_joined" datetime [not null]
+          "first_name" varchar(150) [not null]
+        }
+
+        Table "products_category" {
+          "id" integer [pk, not null]
+          "name" varchar(254) [not null]
+          "friendly_name" varchar(254)
+        }
+
+        Table "products_product" {
+          "id" integer [pk, not null]
+          "sku" varchar(254)
+          "name" varchar(254) [not null]
+          "description" text [not null]
+          "price" decimal [not null]
+          "rating" decimal
+          "image_url" varchar(1024)
+          "image" varchar(100)
+          "category_id" bigint
+          "featured_product" bool [not null]
+        }
+
+        Table "profiles_userprofile" {
+          "id" integer [pk, not null]
+          "default_phone_number" varchar(20)
+          "default_country" varchar(2)
+          "default_postcode" varchar(20)
+          "default_town_or_city" varchar(40)
+          "default_street_address1" varchar(80)
+          "default_street_address2" varchar(80)
+          "default_county" varchar(80)
+          "user_id" integer [unique, not null]
+        }
+
+        Table "articles_post" {
+          "id" integer [pk, not null]
+          "title" varchar(100) [not null]
+          "description" text [not null]
+          "date_published" datetime [not null]
+          "author_id" integer [not null]
+          "body" text [not null]
+          "image" varchar(100)
+          "featured_articles" bool [not null]
+        }
+
+        Table "account_emailaddress" {
+          "id" integer [pk, not null]
+          "email" varchar(254) [unique, not null]
+          "verified" bool [not null]
+          "primary" bool [not null]
+          "user_id" integer [not null]
+        }
+
+        Table "account_emailconfirmation" {
+          "id" integer [pk, not null]
+          "created" datetime [not null]
+          "sent" datetime
+          "key" varchar(64) [unique, not null]
+          "email_address_id" integer [not null]
+        }
+
+        Table "checkout_order" {
+          "id" integer [pk, not null]
+          "order_number" varchar(32) [not null]
+          "full_name" varchar(50) [not null]
+          "email" varchar(254) [not null]
+          "phone_number" varchar(20) [not null]
+          "country" varchar(2) [not null]
+          "postcode" varchar(20)
+          "town_or_city" varchar(40) [not null]
+          "street_address1" varchar(80) [not null]
+          "street_address2" varchar(80)
+          "county" varchar(80)
+          "date" datetime [not null]
+          "delivery_cost" decimal [not null]
+          "order_total" decimal [not null]
+          "grand_total" decimal [not null]
+          "original_bag" text [not null]
+          "stripe_pid" varchar(254) [not null]
+          "user_profile_id" bigint
+        }
+
+        Table "checkout_orderlineitem" {
+          "id" integer [pk, not null]
+          "quantity" integer [not null]
+          "lineitem_total" decimal [not null]
+          "order_id" integer [not null]
+          "product_id" bigint [not null]
+        }
+
+        Table "profiles_wishlist" {
+          "id" integer [pk, not null]
+          "created_on" datetime [not null]
+          "user_wish_id" bigint [not null]
+          "product_id" bigint [not null]
+        }
+
+        Table "products_productreview" {
+          "id" integer [pk, not null]
+          "content" text
+          "stars" integer [not null]
+          "user_id" integer [not null]
+          "product_id" bigint [not null]
+          "date_published" datetime [not null]
+        }
+
 
 ### Planning
 
@@ -125,7 +245,7 @@ Structure:
 Products Page:
 ![wireframe](readme-files/readme/balsamiq-products-readme.png)
 
-I had the initial idea in my head to make it visually appealing, considering the goal was to make an ecommerce for the Company with few products where the brand was in focus. The breadcrumbs througout the page, going from products/bag/checkout, and wishlist/profile/order history.
+I had the initial idea in my head to make it visually appealing, considering the goal was to make an ecommerce for the Company with few products where the brand was in focus. The breadcrumbs througout the page, going from products/bag/checkout, and wishlist/profile/order history was my tree-branch. 
 
 ### End Design Result:
 
