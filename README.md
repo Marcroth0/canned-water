@@ -709,7 +709,7 @@ Deploy to Heroku:
         ```
 11. Type the following into the procfile: 
     - ```
-        web: gunicorn flame.wsgi:application
+        web: gunicorn canned-water.wsgi:application
         ```
 12. Login to Heroku terminal:
     - ```
@@ -756,8 +756,8 @@ Connecting to AWS:
                                 "s3-object-lambda:*"
                             ],
                             "Resource": [
-                                "arn:aws:s3:::milestone-project-4-flame",
-                                "arn:aws:s3:::milestone-project-4-flame/*"
+                                "arn:aws:s3:::canned-water",
+                                "arn:aws:s3:::canned-water/*"
                             ]
                         }
                     ]
@@ -783,7 +783,7 @@ Connecting to AWS:
 2. Update settings.py file to tell Django which bucket it should be communicating with: 
     - ```
         if 'USE_AWS' in os.environ:
-            AWS_STORAGE_BUCKET_NAME = 'milestone-project-4-flame'
+            AWS_STORAGE_BUCKET_NAME = 'canned-water'
             AWS_S3_REGION_NAME = 'eu-north-1'
             AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
             AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
