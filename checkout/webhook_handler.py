@@ -45,6 +45,10 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
 
+        return HttpResponse(
+                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                status=200)
+
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
