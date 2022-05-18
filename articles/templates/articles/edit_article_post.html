@@ -10,52 +10,53 @@ Edit Article
 <div class="overlay-animated"></div>
 
 <div class="container-fluid mt-100">
-  <div class="row justify-content-center">
-    <div class="col-xl-10">
-      <div class="row mb-3 justify-content-center text-center">
-        <div class="col">
-          <h1 class="display-3">Dropp | Article Add</h1>
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="row mb-3 justify-content-center text-center">
+          <div class="col">
+            <h1 class="display-3">Dropp | Article Add</h1>
+          </div>
         </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-12">
+            <nav aria-label="breadcrumb">
+              <ol class="list-unstyled breadcrumb justify-content-center">
+                <li class="text-secondary breadcrumb-item font-weight-bold">
+                  <a class="text-light" href=""
+                    ><span class="">Shop More</span></a
+                  >
+                </li>
+                <li class="text-secondary breadcrumb-item font-weight-bold">
+                  <a class="active-class" aria-current="page" href="#"
+                    ><span class="">My Shopping Bag</span></a
+                  >
+                </li>
+                <li class="text-secondary breadcrumb-item font-weight-bold">
+                  <a class="text-light" href="#"
+                    ><span class="">Checkout</span></a
+                  >
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+              <form method="POST" action="{% url 'edit_article_post' post.id %}" class="form mb-2" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for field in form %}
+                          {% if field.name != 'image' %}
+                              {{ field | as_crispy_field }}
+                          {% else %}
+                              {{ field }}
+                          {% endif %}
+                      {% endfor %} 
+                  <div class="text-right">
+                      <button class="btn btn-black radius-20 bg-dark-07 text-white mx-1 scale" type="submit">Edit</button>
+                  </div>
+              </form>
+          </div>
       </div>
-      <div class="row justify-content-center text-center">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="list-unstyled breadcrumb justify-content-center">
-              <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="text-light" href=""
-                  ><span class="">Shop More</span></a
-                >
-              </li>
-              <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="active-class" aria-current="page" href="#"
-                  ><span class="">My Shopping Bag</span></a
-                >
-              </li>
-              <li class="text-secondary breadcrumb-item font-weight-bold">
-                <a class="text-light" href="#"
-                  ><span class="">Checkout</span></a
-                >
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 offset-md-3">
-            <form method="POST" action="{% url 'edit_article_post' post.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %} 
-                <div class="text-right">
-                    <button class="btn btn-black radius-20 bg-dark-07 text-white mx-1 scale" type="submit">Edit</button>
-                </div>
-            </form>
-        </div>
     </div>
 </div>
 {% endblock %}

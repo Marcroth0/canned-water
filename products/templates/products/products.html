@@ -46,7 +46,7 @@ All Products
                     <div class="product-wrapper mb-45 text-center">
                         <div class="product-img"> <a href="{% url 'product_detail' product.id %}" data-abc="true"> <img src="{{ product.image.url }}" alt=""> </a>
                             <div class="product-action">
-                                <div class="product-action-style"></a> <a class="action-heart AddToWishlist" title="Wishlist" href="{% url 'add_to_wish_list' product.id %}" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true" aria-label="add to bag"""> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
+                                <div class="product-action-style"><a class="action-heart AddToWishlist" title="Wishlist" href="{% url 'add_to_wish_list' product.id %}" data-abc="true"><i class="fa-solid fa-heart-circle-plus text-dark"></i> </a> <a class="action-cart" title="Add To Cart" href="{% url 'product_detail' product.id %}" data-abc="true" aria-label="add to bag"> <i class="fa-solid fa-cart-shopping text-dark"></i> </a> </div>
                             </div>
                         </div>
                     </div>
