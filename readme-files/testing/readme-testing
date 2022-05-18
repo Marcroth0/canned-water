@@ -106,7 +106,6 @@ As a superUser I have the ability to via the frontend edit, add, delete, these f
 
 ![userstories18](/readme-files/readme/superuser-products-readme.png)
 
-
 # Manual Testing
 
 ![testin1](/readme-files/readme/testing-bag-readme.png)
@@ -124,16 +123,15 @@ As a superUser I have the ability to via the frontend edit, add, delete, these f
 ## Validators
 
 My Python code has ran through pep8 and is deemed "All right"
-My Html-code has ran through wc3 validator and has received no errors. 
-W3 CSS Validator came back appproved. 
+My Html-code has ran through wc3 validator and has received no errors.
+W3 CSS Validator came back appproved.
 
 # Lighthouse
 
-Lighthouse returned high in Best Practices, as well as SEO. However, performance is lacking which was anticipated. Due to the brand being in the light I deemed it to be worth it. The SVG-files are heavy, but sell the brand, sell the product. 
+Lighthouse returned high in Best Practices, as well as SEO. However, performance is lacking which was anticipated. Due to the brand being in the light I deemed it to be worth it. The SVG-files are heavy, but sell the brand, sell the product.
 
 ## Unfixed Bugs
 
-1. Through Ajax Code I was able to cause the quickview to gather the product details of my featured products on the index.html. However, sometimes, the footer loses its position(even though I've added code to constantly pushes it down no matter what) However, considering the model "freezes" whatever is behind it it manages to sneak up. I have no solution for it right now, but deemed the function to be cool enough to let it be there. 
+1. Through Ajax Code I was able to cause the quickview to gather the product details of my featured products on the index.html. However, sometimes, the footer loses its position(even though I've added code to constantly pushes it down no matter what) However, considering the model "freezes" whatever is behind it it manages to sneak up. I have no solution for it right now, but deemed the function to be cool enough to let it be there.
 2. Between width 885 and width 767 the account-button and bag overlap. Sometimes my fix works, which was to override the bootstrap class of navbar-expand-md. However, sometimes it still happens and I caught it too late to look further into it. Easily fixed whenever the above mentioned css override will work.
-
-
+3. An issue has occured with the confirmation email sent upon a successful payment. Every purchase goes through, however an issue remains where the confirmation email doesn't get sent. I chose to keep the functionality due to the fix is not far off.
